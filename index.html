@@ -94,7 +94,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('cave.png') center center / cover no-repeat;
+            background: url('assets/cave.png') center center / cover no-repeat;
             z-index: 0;
             filter: brightness(0.4) contrast(1.1) grayscale(0.2);
         }
@@ -1224,7 +1224,7 @@
             heroWrap.innerHTML = `<div class="case-hero" style="background:radial-gradient(circle at 50% 50%,#08051a,#0a0807);display:flex;align-items:center;justify-content:center;gap:64px;padding:40px 60px;flex-wrap:wrap">
               <div style="position:relative;width:280px;height:280px;flex-shrink:0">
                 <div style="position:absolute;inset:0;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1.5px rgba(255,255,255,0.45),0 8px 40px rgba(0,0,0,0.7);animation:disc-spin 22s linear infinite">
-                  <div style="position:absolute;inset:0;background:url('uploads/lws.png') center/cover;border-radius:50%;opacity:0.82"></div>
+                  <div style="position:absolute;inset:0;background:url('assets/lws.png') center/cover;border-radius:50%;opacity:0.82"></div>
                   <div style="position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,255,255,0) 0deg,rgba(255,200,220,0.22) 30deg,rgba(180,210,255,0.28) 60deg,rgba(220,255,210,0.2) 90deg,rgba(255,235,180,0.2) 130deg,rgba(255,255,255,0) 170deg,rgba(200,180,255,0.24) 220deg,rgba(180,230,255,0.22) 270deg,rgba(255,210,200,0.18) 320deg,rgba(255,255,255,0) 360deg);mix-blend-mode:screen"></div>
                   <div style="position:absolute;inset:0;border-radius:50%;background:repeating-radial-gradient(circle at center,rgba(255,255,255,0) 0px,rgba(255,255,255,0) 2px,rgba(255,255,255,0.045) 2.5px,rgba(255,255,255,0) 3px);mix-blend-mode:overlay"></div>
                   <div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse 70% 30% at 30% 25%,rgba(255,255,255,0.5),transparent 60%),radial-gradient(ellipse 50% 20% at 70% 80%,rgba(255,255,255,0.22),transparent 65%);mix-blend-mode:screen"></div>
@@ -1433,8 +1433,8 @@
             hint: 'Web3 charge card — onchain credit that feels off-chain.',
             hero: { kind: 'logo', word: 'REAP' },
             screens: [
-                { label: 'HI_FI_SCREENS', span: 'col-span-3 row-span-2', img: 'uploads/n7hElix49d4o62a8yHGoc3OIocs.avif' },
-                { label: 'SETTINGS_BUYBACK_TREASURY', span: 'col-span-3 row-span-2', img: 'uploads/summary.webp' }
+                { label: 'HI_FI_SCREENS', span: 'col-span-3 row-span-2', img: 'assets/n7hElix49d4o62a8yHGoc3OIocs.avif' },
+                { label: 'SETTINGS_BUYBACK_TREASURY', span: 'col-span-3 row-span-2', img: 'assets/summary.webp' }
             ],
             problem: 'Web3 professionals paid in cryptocurrency need an efficient way to turn that income into everyday spending power. Existing off-ramps are slow and expensive — surveys across active DAOs show contributors reporting $100 or more in gas fees per paycheck, 3 to 6 transactions to complete a single off-ramp, and 5 to 7 days for funds to land. The audience is large and growing: DAO participants went from 13,000 in 2021 to 1.6 million in 2023, and DAO treasuries passed $25 billion by March 2023.',
             approach: 'Researching Coinbase and Crypto.com showed both offer prepaid Visa cards with strong cashback — up to 5% and 4% respectively — that work anywhere Visa is accepted. But published user complaints centered on declined cards, confusing activation flows, and fees that accumulate faster than rewards offset them. The deeper flaw: the prepaid model requires converting crypto to fiat before spending. Every conversion is a potential taxable event, spending limits apply, and rewards depend on staking specific tokens. That ruled out designing a better prepaid card. The Reap solution extends a credit line against crypto and precious metal collateral instead — the user keeps ownership of the asset, avoids the conversion, and skips the taxable event.',
@@ -1462,8 +1462,8 @@
                 },
                 {
                     mosaic: [
-                        { img: 'uploads/flow d.webp', label: 'USER_FLOW', span: 'col-span-4 row-span-2' },
-                        { img: 'uploads/proto.webp', label: 'PROTOTYPE_FLOW', span: 'col-span-2 row-span-2' }
+                        { img: 'assets/flow d.webp', label: 'USER_FLOW', span: 'col-span-4 row-span-2' },
+                        { img: 'assets/proto.webp', label: 'PROTOTYPE_FLOW', span: 'col-span-2 row-span-2' }
                     ]
                 },
                 {
@@ -1474,7 +1474,7 @@
                             span: 'full',
                             layout: 'row',
                             body: 'Flow diagrams mapped the main tasks to surface how many steps the collateral and deposit flows needed before they felt safe to the user. Low-fidelity wireframes worked the main flows through pen and paper, then into digital lo-fi. From there: 57+ frames testing navigation patterns and UI directions across the Dashboard, Wallet, and Portfolio screens and their states. The Dashboard took the most iteration — it carries the bulk of user interaction and went through several rounds before the hierarchy held up.',
-                            img: 'uploads/Screenshot 2026-06-30 at 12.49.47 p.m..png',
+                            img: 'assets/Screenshot 2026-06-30 at 12.49.47 p.m..png',
                             imgMaxH: '420px'
                         },
                         {
@@ -1482,7 +1482,7 @@
                             span: 'full',
                             layout: 'row',
                             body: 'Early variants read as conventional fintech and did not match the audience. Moving to Neo-Brutalism with IBM Plex Mono gave the interface a rawer, more generative tone — a beige background with green CTAs that fits users who are early to Web3 adoption and differentiates from competitors running clean-and-blue UIs. The design has been through multiple iterations since the original 2023 version; the current version is what is documented here, with earlier passes shown to highlight the visual evolution.',
-                            imgs: ['uploads/ve.webp', 'uploads/var.webp']
+                            imgs: ['assets/ve.webp', 'assets/var.webp']
                         },
                         {
                             title: 'WHERE_AI_FIT_IN',
@@ -1494,7 +1494,7 @@
                             span: '',
                             showLink: true,
                             body: 'A functional prototype covering the MVP scope — deposits, buybacks, and rewards — built in Figma.',
-                            img: 'uploads/57.webp'
+                            img: 'assets/57.webp'
                         }
                     ]
                 }
@@ -2193,7 +2193,7 @@
             group.add(label);
             // brand logo decal, traditional cartridge label position
             if (type === 'VHS' || type === 'VHS2' || type === 'VHS3' || type === 'VHS4' || type === 'VHS5' || type === 'VHS6') {
-                const logoUrl = type === 'VHS' ? 'uploads/Logo.png' : type === 'VHS2' ? 'uploads/objectlgo.png' : type === 'VHS3' ? 'uploads/Logo copy.png' : type === 'VHS4' ? 'uploads/PMv2-obj.png' : type === 'VHS5' ? 'uploads/pm-black.png' : 'uploads/Fastin.png';
+                const logoUrl = type === 'VHS' ? 'assets/Logo.png' : type === 'VHS2' ? 'assets/objectlgo.png' : type === 'VHS3' ? 'assets/Logo copy.png' : type === 'VHS4' ? 'assets/PMv2-obj.png' : type === 'VHS5' ? 'assets/pm-black.png' : 'assets/Fastin.png';
                 const maxW = 0.44, maxH = 0.30;
                 const logoDecal = new THREE.Mesh(new THREE.PlaneGeometry(maxW, maxW * 0.3), null);
                 const logoTex = new THREE.TextureLoader().load(logoUrl, function(tex){
@@ -2223,7 +2223,7 @@
             // BRANDING — flat disc; CD carries Labwear cover art, CD2/CD3 use a generated placeholder texture
             let coverTex;
             if (type === 'CD') {
-                coverTex = new THREE.TextureLoader().load('uploads/lws-cover.png');
+                coverTex = new THREE.TextureLoader().load('assets/lws-cover.png');
                 coverTex.colorSpace = THREE.SRGBColorSpace;
             } else if (type === 'CD2') {
                 const cc = document.createElement('canvas'); cc.width = 512; cc.height = 512;
@@ -2239,7 +2239,7 @@
                     ccx.drawImage(logoImg, (512 - w) / 2, (512 - h) / 2, w, h);
                     coverTex.needsUpdate = true;
                 };
-                logoImg.src = 'uploads/Aei-transparentbg.png';
+                logoImg.src = 'assets/Aei-transparentbg.png';
             } else {
                 const c = document.createElement('canvas'); c.width = 256; c.height = 256;
                 const cx = c.getContext('2d');

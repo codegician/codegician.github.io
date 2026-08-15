@@ -94,7 +94,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://github.com/codegician/codegician.github.io/releases/download/v1.2/cave.png') center center / cover no-repeat;
+            background: url('cave.png') center center / cover no-repeat;
             z-index: 0;
             filter: brightness(0.4) contrast(1.1) grayscale(0.2);
         }
@@ -268,7 +268,7 @@
         /* mosaic */
         #case-overlay .case-mosaic {
             display: grid; grid-template-columns: repeat(6, 1fr);
-            grid-auto-rows: 150px; gap: 14px;
+            grid-auto-rows: 4px; gap: 14px;
         }
         #case-overlay .case-mosaic .tile {
             position: relative; border-radius: 12px; overflow: hidden;
@@ -281,13 +281,13 @@
             background: repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 4px);
             opacity: .5;
         }
-        #case-overlay .case-mosaic .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        #case-overlay .case-mosaic .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
         #case-overlay .case-mosaic .tile .tile-label {
             position: relative; font-family: 'JetBrains Mono', monospace; font-size: 10px;
             letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,224,220,0.55);
         }
         @media (max-width: 720px) {
-            #case-overlay .case-mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
+            #case-overlay .case-mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 4px; }
             #case-overlay .case-mosaic .tile { grid-column: auto !important; grid-row: auto !important; }
         }
         /* return-to-browsing TV control */
@@ -482,7 +482,7 @@
 <header class="fixed top-0 left-0 w-full z-50 flex flex-col pointer-events-auto">
 <div class="flex justify-between items-center px-gutter py-4 bg-surface/40 backdrop-blur-md border-b border-white/5">
 <div class="font-display-lg text-2xl text-primary drop-shadow-[0_0_12px_rgba(255,127,80,0.6)] cursor-pointer" onclick="resetToArtDirection()">
-            MOORS_HOUSE_v1.0
+            MOORS_HOUSE_v1.2
         </div>
 <div class="flex gap-4 items-center">
 <button class="transition-all duration-300 active:scale-95 text-on-surface-variant hover:text-tertiary font-label-sm flex items-center gap-2 bg-surface-container/30 px-4 py-2 rounded-full backdrop-blur-md border border-white/10" id="about-btn" style="display:none">
@@ -604,7 +604,7 @@
 <div class="font-code-sm text-[10px] text-tertiary tracking-[0.25em] mb-3">ABOUT_THE_RESIDENT</div>
 <div class="font-display-lg text-2xl text-primary uppercase tracking-tight mb-3">@ORUGAAGII</div>
 <p class="font-body-md text-on-surface-variant leading-relaxed text-sm mb-5">Designer building Afrofuturist brand systems, sovereign infrastructure, and interactive worlds. Currently broadcasting from STATION_01.</p>
-<a class="font-code-sm text-xs text-secondary-fixed-dim hover:text-primary transition-colors tracking-widest" href="/cdn-cgi/l/email-protection#0d606463694d7e787f7f686c61236462">→ SEND_THOUGHT</a>
+<a class="font-code-sm text-xs text-secondary-fixed-dim hover:text-primary transition-colors tracking-widest" href="mailto:mind@surreal.io">→ SEND_THOUGHT</a>
 </div>
 <main id="ui-layer">
 <!-- Section 1: Intro -->
@@ -649,7 +649,7 @@
 <div class="p-2 rounded-full bg-white/5 group-hover:bg-primary/20 transition-all">
 <span class="material-symbols-outlined">alternate_email</span>
 </div>
-                            <span class="__cf_email__" data-cfemail="a3cecacdc7e3d0d6d1d1c6c2cf8dcacc">[email&#160;protected]</span>
+                            mind@surreal.io
                         </a>
 <p class="text-[10px] opacity-40 uppercase tracking-[0.2em] mt-4">Broadcast authorized via Moors_Net 4.2</p>
 </div>
@@ -658,7 +658,7 @@
 <div class="font-code-sm text-[10px] text-tertiary tracking-[0.25em] mb-3">ABOUT_THE_RESIDENT</div>
 <div class="font-display-lg text-2xl text-primary uppercase tracking-tight mb-3">@ORUGAAGII</div>
 <p class="font-body-md text-on-surface-variant leading-relaxed text-sm mb-5">Designer building Afrofuturist brand systems, sovereign infrastructure, and interactive worlds. Currently broadcasting from STATION_01.</p>
-<a class="font-code-sm text-xs text-secondary-fixed-dim hover:text-primary transition-colors tracking-widest" href="/cdn-cgi/l/email-protection#422f2b2c26023137303027232e6c2b2d">→ SEND_THOUGHT</a>
+<a class="font-code-sm text-xs text-secondary-fixed-dim hover:text-primary transition-colors tracking-widest" href="mailto:mind@surreal.io">→ SEND_THOUGHT</a>
 </div>
 <div class="text-right">
 <div class="inline-block p-8 dream-blur rounded-2xl border-t-8 border-primary shadow-2xl relative overflow-hidden group gold-glow-ui">
@@ -695,7 +695,7 @@
     <div id="lb-counter">1 / 1</div>
     <button class="lb-nav" id="lb-next" title="Next"><span class="material-symbols-outlined" style="font-size:26px">chevron_right</span></button>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     // --- UI INTERACTION HANDLERS ---
     const infoCard = document.getElementById('obj-info-card');
     const infoTitle = document.getElementById('info-title');
@@ -809,7 +809,7 @@
         ic.font = 'bold 68px sans-serif';
         ic.textAlign = 'center'; ic.textBaseline = 'middle';
         ic.fillStyle = 'rgba(20,10,4,0.95)';
-        ic.fillText(knobIcons[i], 64, 68);
+        ic.fillText(knobIcons[i], 72, 68);
         const iconTex = new THREE.CanvasTexture(iconCanvas);
         const iconSprite = new THREE.Sprite(
             new THREE.SpriteMaterial({ map: iconTex, transparent: true, depthTest: false })
@@ -822,10 +822,10 @@
     }
 
     function updateKnobDisabledState() {
-        const cur = currentSection < 1 ? 1 : currentSection;
+        const cur = currentSection < 0 ? 0 : currentSection;
         tvButtons.forEach(btn => {
             const a = btn.userData.action;
-            const disabled = (a === 'prev' && cur <= 1) || (a === 'next' && cur >= 4);
+            const disabled = (a === 'prev' && cur <= 0) || (a === 'next' && cur >= 4);
             btn.userData.disabled = disabled;
             btn.userData.baseMat.opacity = disabled ? 0.28 : 0.92;
             btn.userData.baseMat.emissiveIntensity = disabled ? 0.2 : 1.2;
@@ -837,8 +837,8 @@
             tvZoomed = !tvZoomed;
             targetTvScale = tvZoomed ? tvZoomedScale : tvDefaultScale;
         } else {
-            const cur = currentSection < 1 ? 0 : currentSection;
-            const target = action === 'next' ? Math.min(cur + 1, 4) : Math.max(cur - 1, 1);
+            const cur = currentSection < 0 ? 0 : currentSection;
+            const target = action === 'next' ? Math.min(cur + 1, 4) : Math.max(cur - 1, 0);
             if (target === cur) return;
             // Scroll to centre of target section for reliable detection
             const pct = (target + 0.5) / 6;
@@ -888,7 +888,7 @@
             if (Math.sin(time * 3) > 0) {
                 tvCtx.fillStyle = '#e9c349';
                 tvCtx.font = '500 18px "JetBrains Mono", monospace';
-                tvCtx.fillText('▼ LOCK_IN', W/2, H/2 + 110);
+                tvCtx.fillText('▼ TAP_IN', W/2, H/2 + 110);
             }
         } else if (ch === 1) { // Reap Exchange — charge card + ticker
             tvCtx.fillStyle = '#0e1626'; tvCtx.fillRect(0, 0, W, H);
@@ -1146,6 +1146,29 @@
 
     // --- PROJECT PAGE (Layer 2) ---
     const overlay = document.getElementById('case-overlay');
+    const MOSAIC_ROW_UNIT = 4;
+    function masonizeGrid(container) {
+        if (!container) return;
+        const gapPx = parseFloat(getComputedStyle(container).columnGap) || 14;
+        const tiles = Array.from(container.querySelectorAll('.tile'));
+        function sizeTile(tile) {
+            const img = tile.querySelector('img');
+            const w = tile.getBoundingClientRect().width;
+            if (!w) { if (tile.isConnected) requestAnimationFrame(function(){ sizeTile(tile); }); return; }
+            const h = (img && img.naturalWidth) ? w * (img.naturalHeight / img.naturalWidth) : w;
+            const span = Math.max(1, Math.ceil((h + gapPx) / (MOSAIC_ROW_UNIT + gapPx)));
+            tile.style.gridRow = 'span ' + span;
+        }
+        tiles.forEach(function(tile) {
+            const img = tile.querySelector('img');
+            if (img) { if (img.complete && img.naturalWidth) sizeTile(tile); else img.addEventListener('load', function(){ sizeTile(tile); }); }
+            else sizeTile(tile);
+        });
+        if (!container.dataset.masonizeResize) {
+            container.dataset.masonizeResize = '1';
+            window.addEventListener('resize', function(){ tiles.forEach(sizeTile); });
+        }
+    }
     function openCase(chIdx) {
         const ch = (chIdx && typeof chIdx === 'object') ? chIdx : CHANNELS[chIdx];
         if (!ch || !ch.type) return;
@@ -1201,7 +1224,7 @@
             heroWrap.innerHTML = `<div class="case-hero" style="background:radial-gradient(circle at 50% 50%,#08051a,#0a0807);display:flex;align-items:center;justify-content:center;gap:64px;padding:40px 60px;flex-wrap:wrap">
               <div style="position:relative;width:280px;height:280px;flex-shrink:0">
                 <div style="position:absolute;inset:0;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1.5px rgba(255,255,255,0.45),0 8px 40px rgba(0,0,0,0.7);animation:disc-spin 22s linear infinite">
-                  <div style="position:absolute;inset:0;background:url('https://github.com/codegician/codegician.github.io/releases/download/v1.2/lws.png') center/cover;border-radius:50%;opacity:0.82"></div>
+                  <div style="position:absolute;inset:0;background:url('uploads/lws.png') center/cover;border-radius:50%;opacity:0.82"></div>
                   <div style="position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,255,255,0) 0deg,rgba(255,200,220,0.22) 30deg,rgba(180,210,255,0.28) 60deg,rgba(220,255,210,0.2) 90deg,rgba(255,235,180,0.2) 130deg,rgba(255,255,255,0) 170deg,rgba(200,180,255,0.24) 220deg,rgba(180,230,255,0.22) 270deg,rgba(255,210,200,0.18) 320deg,rgba(255,255,255,0) 360deg);mix-blend-mode:screen"></div>
                   <div style="position:absolute;inset:0;border-radius:50%;background:repeating-radial-gradient(circle at center,rgba(255,255,255,0) 0px,rgba(255,255,255,0) 2px,rgba(255,255,255,0.045) 2.5px,rgba(255,255,255,0) 3px);mix-blend-mode:overlay"></div>
                   <div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse 70% 30% at 30% 25%,rgba(255,255,255,0.5),transparent 60%),radial-gradient(ellipse 50% 20% at 70% 80%,rgba(255,255,255,0.22),transparent 65%);mix-blend-mode:screen"></div>
@@ -1222,9 +1245,11 @@
         }
 
         // 4. mosaic
-        document.getElementById('case-mosaic').innerHTML = p.screens.map(s =>
+        const caseMosaicEl = document.getElementById('case-mosaic');
+        caseMosaicEl.innerHTML = p.screens.map(s =>
             `<div class="tile ${s.span || ''}">${s.img ? `<img src="${s.img}" alt="${s.label}">` : ''}<span class="tile-label">${s.label}</span></div>`
         ).join('');
+        masonizeGrid(caseMosaicEl);
         // hide top mosaic for FILM — it moves into the sidebar
         document.getElementById('case-mosaic').style.display = ch.type === 'FILM' ? 'none' : '';
         // role reveal slider
@@ -1262,7 +1287,8 @@
                     const linkBtnHtml = s.showLink && p.link ? '<a ' + (p.link.url && p.link.url !== '#' ? 'href="' + p.link.url + '" target="_blank" rel="noopener"' : 'href="#" onclick="return false"') + ' class="inline-flex items-center gap-2 px-6 py-2 bg-primary text-on-primary font-label-sm rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_16px_rgba(255,127,80,0.4)] uppercase tracking-widest text-xs mt-4">' + (p.link.kind === 'site' ? 'Visit Live Site ↗' : 'View Prototype ↗') + '</a>' : '';
                     if (s.layout === 'row') {
                         var rowImg = s.img ? '<div class="flex-1"><img src="' + s.img + '" class="w-full rounded-lg border border-white/8" style="object-fit:contain;max-height:320px"></div>' : (s.imgs ? '<div class="flex-1 flex flex-col gap-3">' + s.imgs.map(function(im){ return '<img src="' + im + '" class="w-full rounded-lg border border-white/8" style="object-fit:contain;max-height:200px">'; }).join('') + '</div>' : '');
-                        return '<div class="' + spanClass + '"><div class="font-code-sm text-[9px] text-tertiary/55 tracking-[0.22em] uppercase mb-2">' + s.title + '</div><div class="flex gap-6 mt-3 items-start">' + (s.rowReverse ? rowImg + '<div class="flex-1">' + bodyHtml + statsHtml + linkBtnHtml + '</div>' : '<div class="flex-1">' + bodyHtml + statsHtml + linkBtnHtml + '</div>' + rowImg) + '</div></div>';
+                        var rowText = '<div class="flex-1 flex flex-col justify-center">' + bodyHtml + statsHtml + linkBtnHtml + '</div>';
+                        return '<div class="' + spanClass + '"><div class="font-code-sm text-[9px] text-tertiary/55 tracking-[0.22em] uppercase mb-2">' + s.title + '</div><div class="flex gap-6 mt-3 items-stretch">' + (s.rowReverse ? rowImg + rowText : rowText + rowImg) + '</div></div>';
                     }
                     return '<div class="' + spanClass + '"><div class="font-code-sm text-[9px] text-tertiary/55 tracking-[0.22em] uppercase mb-2">' + s.title + '</div>' + bodyHtml + statsHtml + linkBtnHtml + imgHtml + '</div>';
                 }
@@ -1274,7 +1300,7 @@
                         return '<div class="mb-12"><div class="flex items-center gap-4 mb-7"><div class="font-code-sm text-[10px] text-tertiary tracking-[0.3em]">' + (rv.title||'VIS_EVOLUTION') + '</div><div class="flex-1 h-px bg-white/8"></div></div><div class="reveal-slider"><div class="reveal-after">' + ac + '</div><div class="reveal-before">' + bc + '</div><div class="reveal-handle-line"></div><div class="reveal-handle-btn">&#x21D4;</div><div class="reveal-label reveal-label-before">' + (rv.beforeLabel||'BEFORE') + '</div><div class="reveal-label reveal-label-after">' + (rv.afterLabel||'AFTER') + '</div></div></div>';
                     }
                     if (group.mosaic) {
-                        return '<div class="case-mosaic mb-10">' + group.mosaic.map(function(t){ return '<div class="tile ' + (t.span||'') + '">' + (t.img ? '<img src="' + t.img + '" alt="' + t.label + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">' : '') + '<span class="tile-label">' + t.label + '</span></div>'; }).join('') + '</div>';
+                        return '<div class="case-mosaic mb-10" data-lazy-masonize="1">' + group.mosaic.map(function(t){ return '<div class="tile ' + (t.span||'') + '">' + (t.img ? '<img src="' + t.img + '" alt="' + t.label + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">' : '') + '<span class="tile-label">' + t.label + '</span></div>'; }).join('') + '</div>';
                     }
                     if (group.sidebar) {
                         var screenTiles = (p.screens||[]).map(function(s){ return '<div style="position:relative;aspect-ratio:1/1;background:#120c09;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.07)">'+(s.img?'<img src="'+s.img+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">':'')+'<span style="position:absolute;bottom:8px;left:10px;font-family:JetBrains Mono,monospace;font-size:9px;letter-spacing:0.18em;color:rgba(237,224,220,0.4);text-transform:uppercase">'+s.label+'</span></div>'; }).join('');
@@ -1283,6 +1309,7 @@
                     }
                     return '<div class="mb-12"><div class="flex items-center gap-4 mb-7"><div class="font-code-sm text-[10px] text-tertiary tracking-[0.3em]">' + group.groupTitle + '</div><div class="flex-1 h-px bg-white/8"></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6">' + group.sections.map(renderExtSection).join('') + '</div></div>';
                 }).join('');
+                extWrap.querySelectorAll('[data-lazy-masonize]').forEach(masonizeGrid);
                 // Init boomerang videos
                 extWrap.querySelectorAll('video[data-boomerang]').forEach(function(v) {
                     var dir = 1;
@@ -1381,10 +1408,19 @@
 
     const categoriesMap = {
         'VHS': 'INTERACTIVE',
+        'VHS2': 'INTERACTIVE',
+        'VHS3': 'INTERACTIVE',
+        'VHS4': 'INTERACTIVE',
+        'VHS5': 'INTERACTIVE',
+        'VHS6': 'INTERACTIVE',
         'CD': 'BRANDING',
+        'CD2': 'BRANDING',
+        'CD3': 'BRANDING',
         'LABWEAR': 'BRANDING',
         'FILM': 'SPATIAL',
-        'USB': 'ART_DIRECTION'
+        'USB': 'ART_DIRECTION',
+        'USB2': 'ART_DIRECTION',
+        'USB3': 'ART_DIRECTION'
     };
 
     // Real projects — keyed by archive object type.
@@ -1393,48 +1429,41 @@
     // screens: array of mosaic tiles (4–6); each { label, span?, img? }
     const projectData = {
         'VHS': {
-            title: 'REAP_EXCHANGE', meta: 'ROLE: PRODUCT DESIGNER  //  YEAR: 2024',
+            title: 'REAP_EXCHANGE', meta: 'ROLE: MARKET RESEARCH, COMPETITIVE ANALYSIS, UX, UI DESIGN, PROTOTYPING  //  TYPE: SELF-INITIATED  //  YEAR: 2025',
             hint: 'Web3 charge card — onchain credit that feels off-chain.',
             hero: { kind: 'logo', word: 'REAP' },
             screens: [
-                { label: 'HI_FI_SCREENS', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.2/n7hElix49d4o62a8yHGoc3OIocs.avif' },
-                { label: 'SETTINGS_BUYBACK_TREASURY', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.2/summary.webp' }
+                { label: 'HI_FI_SCREENS', span: 'col-span-3 row-span-2', img: 'uploads/n7hElix49d4o62a8yHGoc3OIocs.avif' },
+                { label: 'SETTINGS_BUYBACK_TREASURY', span: 'col-span-3 row-span-2', img: 'uploads/summary.webp' }
             ],
-            problem: 'Web3 professionals are increasingly paid in cryptocurrency, but converting crypto income to spendable cash requires multiple steps, gas fees, and days of waiting — a recurring tax on people who already hold real value in a digital currency.',
-            approach: 'Designed a DeFi platform around a charge-card mental model: familiar card UI up front, backed by a credit line secured against crypto assets and precious metals. Collateral and liquidation states surface only when they become relevant — never up front.',
-            outcome: 'Immediate purchasing power without selling holdings or off-ramping. Led end-to-end from market research through high-fidelity prototype — a flow a first-time user can complete without reading docs, while giving experts the ledger detail underneath.',
+            problem: 'Web3 professionals paid in cryptocurrency need an efficient way to turn that income into everyday spending power. Existing off-ramps are slow and expensive — surveys across active DAOs show contributors reporting $100 or more in gas fees per paycheck, 3 to 6 transactions to complete a single off-ramp, and 5 to 7 days for funds to land. The audience is large and growing: DAO participants went from 13,000 in 2021 to 1.6 million in 2023, and DAO treasuries passed $25 billion by March 2023.',
+            approach: 'Researching Coinbase and Crypto.com showed both offer prepaid Visa cards with strong cashback — up to 5% and 4% respectively — that work anywhere Visa is accepted. But published user complaints centered on declined cards, confusing activation flows, and fees that accumulate faster than rewards offset them. The deeper flaw: the prepaid model requires converting crypto to fiat before spending. Every conversion is a potential taxable event, spending limits apply, and rewards depend on staking specific tokens. That ruled out designing a better prepaid card. The Reap solution extends a credit line against crypto and precious metal collateral instead — the user keeps ownership of the asset, avoids the conversion, and skips the taxable event.',
+            outcome: 'A functional prototype covering deposits, buybacks, and rewards. The credit line model removes the conversion step that made every competitor flow slow and taxable, cutting the path between holding crypto and spending it. The prototype moved Reap Exchange from concept to pitchable — demonstrated live rather than described on slides. Pitched twice and submitted to a16z Speedrun.',
             extended: [
                 {
                     groupTitle: 'UX_RESEARCH',
                     sections: [
                         {
                             title: 'MARKET_CONTEXT',
-                            body: "Web3 professionals represent a growing economic force, but financial infrastructure hasn't kept pace with how they earn. DAOs have become central to how work is organized and compensated onchain \u2014 creating urgent demand for tooling built around crypto-native spending patterns.",
+                            body: "Web3 professionals represent a growing economic force, but financial infrastructure hasn't kept pace with how they earn. DAO participants went from 13,000 in 2021 to 1.6 million in 2023, and DAO treasuries passed $25 billion by March 2023 — the number of people hitting this pain point will keep rising.",
                             stats: [
-                                { val: '40%', label: 'of total DeFi value locked sits in DAO treasuries' },
-                                { val: '12,000%', label: 'DAO membership growth between 2021\u20132023' },
-                                { val: '$25B', label: 'DAO treasuries exceeded this as of March 2023' },
-                                { val: '$100B', label: 'projected DAO treasury value in the near term' }
+                                { val: '1.6M', label: 'DAO participants by 2023, up from 13,000 in 2021' },
+                                { val: '$25B', label: 'DAO treasuries exceeded this as of March 2023' }
                             ]
                         },
-                        {
-                            title: 'WHY_REAP_EXCHANGE',
-                            body: "I'm an advocate for decentralization and for using blockchain to build a more financially inclusive future. The purpose of this app is to let Web3 professionals leverage what they've already earned for instant purchasing power, bypassing the fees and the days of waiting that stand between crypto income and real-world spending."
-                        },
-                        { title: 'COMPETITIVE_ANALYSIS', body: 'I looked closely at the two most popular exchanges offering crypto spending cards, Crypto.com and Coinbase, focusing on the off-ramping experience: their Visa cards, rewards, and the fees of liquidating crypto.<br><br><strong class="text-on-surface/90">What works:</strong> Both offer prepaid Visa cards with cashback up to 5%, letting users earn rewards in crypto without constant manual conversion.<br><br><strong class="text-on-surface/90">What doesn\'t:</strong> Both rely on prepaid balances — users still convert crypto to fiat first, paying fees and potentially triggering taxable events. Real user complaints surfaced the same themes: cards declined at merchants, confusing activation flows, and rewards that cost more than they earn.', imgs: ['uploads/coinbase.webp', 'uploads/crypto.webp'], imgsCols: 2, imgMaxH: '180px' },
-                        { title: 'SURVEYS', body: 'I surveyed contributors across some of the most active DAOs — both part-time and full-time participants. Taken together: as Web3 adoption grows, so does demand for liquidity <em>without</em> selling assets. That\'s the gap Reap Exchange targets — credit on crypto collateral, supporting financial autonomy in a decentralized world.', stats: [
-                            { val: '<$100', label: 'Contributors spent $100+ in gas fees each paycheck' },
-                            { val: '3–6+', label: 'Transactions to get crypto into a fiat account' },
-                            { val: '5 days', label: 'Off-ramping through Coinbase or lesser-known routes' }
+                        { title: 'SURVEYS', body: 'Surveys across active DAOs — both part-time and full-time participants — confirmed the off-ramp pain directly. As Web3 adoption grows, so does demand for liquidity without selling assets. That is the gap Reap Exchange targets.', stats: [
+                            { val: '$100+', label: 'in gas fees per paycheck, reported by surveyed DAO contributors' },
+                            { val: '3–6', label: 'Separate transactions to move crypto into a fiat account' },
+                            { val: '5–7 days', label: 'To off-ramp a crypto paycheck through existing platforms' }
                         ] },
-                        { title: 'PERSONA_01 — LAURA_SANTOS', body: '<strong class="text-on-surface/90">DAO Contributor</strong> — Remote, São Paulo<br><br>Wants to contribute to DAOs and earn rewards while keeping her crypto liquid, and to access secure credit without selling her holdings. Frustrated by the difficulty of getting traditional credit without centralized financial records, by complex staking/reward interfaces, and by high cross-border fees. Motivated by decentralization and financial independence outside traditional banks.' },
-                        { title: 'PERSONA_02 — ISAIAH_ADEBAYO', body: '<strong class="text-on-surface/90">Web3 Professional / Developer</strong> — Remote, Kuala Lumpur<br><br>Manages multiple crypto income streams from freelance Web3 work and wants spending power without liquidating long-term investments. Frustrated by poor integration between Web3 and traditional finance, by volatility eroding purchasing power, and by the tax complexity of converting crypto to fiat. Motivated by managing income while staying inside the crypto ecosystem.' }
+                        { title: 'PERSONA_01 — LAURA_SANTOS', body: '<strong class="text-on-surface/90">DAO Contributor</strong><br><br>Wants liquidity without giving up governance positions. Her constraint is holding her position while accessing spending power from assets she already owns.' },
+                        { title: 'PERSONA_02 — ISAIAH_ADEBAYO', body: '<strong class="text-on-surface/90">Freelance Web3 Developer</strong><br><br>Juggling multiple income streams and the tax reporting that comes with them. His constraint is managing volatility across income sources — a different problem from Laura\'s governance concern.' }
                     ]
                 },
                 {
                     mosaic: [
-                        { img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.2/flow.d.webp', label: 'USER_FLOW', span: 'col-span-4 row-span-2' },
-                        { img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.2/proto.webp', label: 'PROTOTYPE_FLOW', span: 'col-span-2 row-span-2' }
+                        { img: 'uploads/flow d.webp', label: 'USER_FLOW', span: 'col-span-4 row-span-2' },
+                        { img: 'uploads/proto.webp', label: 'PROTOTYPE_FLOW', span: 'col-span-2 row-span-2' }
                     ]
                 },
                 {
@@ -1444,23 +1473,28 @@
                             title: 'DESIGN_DECISIONS',
                             span: 'full',
                             layout: 'row',
-                            body: 'I worked from flow diagrams of the core tasks, into low-fidelity wireframes of the main flows, then into high-fidelity screens to explore navigation patterns, UI styles, and variants of the Dashboard, Wallet, Portfolio, and other key screens and their states. 57+ frames were created across that exploration.',
-                            img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.2/Screenshot.2026-06-30.at.12.49.47.p.m.png',
+                            body: 'Flow diagrams mapped the main tasks to surface how many steps the collateral and deposit flows needed before they felt safe to the user. Low-fidelity wireframes worked the main flows through pen and paper, then into digital lo-fi. From there: 57+ frames testing navigation patterns and UI directions across the Dashboard, Wallet, and Portfolio screens and their states. The Dashboard took the most iteration — it carries the bulk of user interaction and went through several rounds before the hierarchy held up.',
+                            img: 'uploads/Screenshot 2026-06-30 at 12.49.47 p.m..png',
                             imgMaxH: '420px'
                         },
                         {
                             title: 'VISUAL_EVOLUTION',
                             span: 'full',
                             layout: 'row',
-                            body: 'The Neo-Brutalist direction was a deliberate response to the audience. Reap\'s core users are at the frontier of Web3 adoption, and the conventional, polished UIs of incumbent exchanges don\'t reflect how they see themselves or their work. A raw, structural visual language — implementing a Mono style font, hard edges, a flat beige palette with green CTAs — creates visual distinction from competitors and signals a home for builders on the forefront, not retrofitted from a traditional fintech template.<br><br>The Dashboard took the most iteration, since it\'s the primary surface for user interaction. Early variants didn\'t capture the raw, authentic tech character Reap\'s audience responds to. The shift to a beige background with green CTAs was the turning point — moving the interface away from generic fintech polish toward something that reads as purpose-built for this user.',
-                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.2/ve.webp', 'https://github.com/codegician/codegician.github.io/releases/download/v1.2/var.webp']
+                            body: 'Early variants read as conventional fintech and did not match the audience. Moving to Neo-Brutalism with IBM Plex Mono gave the interface a rawer, more generative tone — a beige background with green CTAs that fits users who are early to Web3 adoption and differentiates from competitors running clean-and-blue UIs. The design has been through multiple iterations since the original 2023 version; the current version is what is documented here, with earlier passes shown to highlight the visual evolution.',
+                            imgs: ['uploads/ve.webp', 'uploads/var.webp']
+                        },
+                        {
+                            title: 'WHERE_AI_FIT_IN',
+                            span: '',
+                            body: 'The current iteration was built with a Claude-to-Figma workflow. Claude handled research and a validation pass to orient on deliverables. The brief was handed off to Claude Code\'s Figma MCP — using dedicated Design Skills to initialize the project and build a design system and token library first, giving the model a consistent reference for subsequent wireframes. The project had initial screens and a design system from earlier variants, and prompts were structured to use those as the foundation. Outputs were handed to Claude Design to build a working prototype for testing and validation.'
                         },
                         {
                             title: 'HANDOFF_&_PROTOTYPE',
                             span: '',
                             showLink: true,
-                            body: 'I built a high-fidelity, clickable prototype in Figma to test and refine the full user flow. The MVP scope covered deposits and buybacks.',
-                            img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.2/57.webp'
+                            body: 'A functional prototype covering the MVP scope — deposits, buybacks, and rewards — built in Figma.',
+                            img: 'uploads/57.webp'
                         }
                     ]
                 }
@@ -1468,15 +1502,15 @@
             link: { kind: 'prototype', url: 'https://reap.figma.site/' }
         },
         'FILM': {
-            title: 'COCOON', meta: 'ROLE: PRODUCT CONSTRUCTOR — CONCEPT, AD, IxD, DESIGN SYSTEM, PROTOTYPE  //  YEAR: 2026',
+            title: 'COCOON', meta: 'ROLE: CONCEPT, ART DIRECTION, DESIGN SYSTEM, INTERACTIVE PROTOTYPE, TECHNICAL BUILD  //  TYPE: MAKEATHON  //  YEAR: 2026',
             hint: 'AR sensory filter — soften reality, don\'t escape it.',
             hero: { kind: 'video', src: 'https://github.com/codegician/codegician.github.io/releases/download/v1.0/cocoon-walkthrough.mp4' },
             roleReveal: {
                 title: 'VIS_EVOLUTION',
                 beforeLabel: 'RAW STATE',
                 afterLabel: 'COCOON STATE',
-                before: '',
-                after: ''
+                before: 'https://github.com/codegician/codegician.github.io/releases/download/v1.0/cocoon-before-ts.png',
+                after: 'https://github.com/codegician/codegician.github.io/releases/download/v1.0/cocoon-after-ts-overgrowth.png'
             },
             screens: [
                 { label: 'DIAL_RAW', span: 'col-span-3 row-span-2' },
@@ -1485,34 +1519,34 @@
                 { label: 'BIOME_FLOW', span: 'col-span-2 row-span-1' },
                 { label: 'DESIGN_SYSTEM', span: 'col-span-2 row-span-1' }
             ],
-            problem: 'Cities overwhelm us, and the only two responses on offer are both forms of leaving — retreat entirely, or tough it out. Neither lets you stay present in a place like Times Square and feel okay being there. Around 1 in 6 people experience sensory processing sensitivity, making dense, loud environments a daily tax, not just an inconvenience.',
-            approach: 'Cocoon is the third option. A single dial that composites a calming biome layer over the real world — overgrowth reclaiming building faces, or a Flow layer over hard surfaces — while the world keeps moving underneath. You stay aware, social, and safe. What changes is your relationship to the environment, not your access to it.',
-            outcome: 'A working interactive prototype built across 80+ iterations in Figma Make — a full dial-driven experience with four named states (RAW → HUSHED → STILL → COCOON), two compositing biomes, selective SVG masking, and dial-linked audio softening. Concept, design system, and functioning build owned end-to-end.',
+            problem: 'Persons with heightened sensory sensitivity navigating high-stimulation cities need a way to turn a place\'s intensity down while staying present in it — the existing options are retreat entirely or absorb all of it. Around 1 in 6 people experience sensory processing sensitivity, making dense, loud environments a daily tax, not just an inconvenience.',
+            approach: 'Cocoon is the third option: stay immersed in the real place, keep the world moving, and change your relationship to the environment by turning its intensity down. A single dial moves through four states and drives both visual and audio softening together — one act of turning the city down, not a mixing board. The brand of an AR product is what the softening feels like from inside: the texture of the dampening, the way the biome grows in, the pacing of the transition. The UI is a visionOS-inspired spatial interface — frosted glass, tracked uppercase, clinical instrument aesthetic — so the control reads as precision while what it produces is a natural wonder.',
+            outcome: 'A working interactive prototype across 80+ iterations: the four-state dial, two compositing biomes, selective SVG masking that places the effect in the scene, dial-linked audio softening, and a UI that honors the design system. Two issues found in testing — mask clipping too tightly on the dense center cluster and an audio dropout from browser autoplay handling — have both since been resolved.',
             extended: [
                 {
                     groupTitle: 'CONTEXT',
                     sections: [
                         {
                             title: 'THE_PROBLEM',
-                            body: 'Cities overwhelm us, and the only two responses on offer are both forms of leaving. You either <em>retreat</em> — the mountain trip, the morning meditation, the noise-cancelling headphones that wall the street out entirely — or you <em>tough it out</em>: put your head down, push through the crowd and the noise and the hustle. One removes you from the world; the other asks you to absorb all of it. Neither lets you stay present in a place like Times Square and feel okay being there.',
+                            body: 'Persons with heightened sensory sensitivity navigating high-stimulation cities need a way to turn a place\'s intensity down while staying present in it. The existing options are both forms of leaving — <em>retreat entirely</em>, or <em>absorb all of it</em>. Neither lets you stay present in a place like Times Square and feel okay being there.',
                             stats: [
                                 { val: '1 in 6', label: 'people experience sensory processing sensitivity' },
-                                { val: '4', label: 'named states: RAW → HUSHED → STILL → COCOON' },
+                                { val: '4', label: 'named states: RAW → STILL → HUSHED → COCOON' },
                                 { val: '2', label: 'compositing biomes: Overgrowth and Flow' },
                                 { val: '80+', label: 'iterations in Figma Make across the full build' }
                             ]
                         },
                         {
                             title: 'THE_CONCEPT',
-                            body: 'Cocoon is the third option. You stay immersed in the real place — the world keeps kicking, the hustle keeps going — but you change your <em>relationship</em> to it by turning its intensity down. It\'s closer to a guided meditation you can run anywhere than to a pair of headphones: not a wall between you and the city, but a dial on how much of the city reaches you.<br><br>The point that makes this <em>softening</em> and not <em>escape</em>: the world keeps moving the entire time. Traffic doesn\'t freeze, the crosswalk signal still changes, people walk on by. You stay aware, you stay social, you stay safe — what changes is your relationship to the environment, not your access to it.'
+                            body: 'Cocoon is the third option. You stay immersed in the real place — the world keeps kicking, the hustle keeps going — and you change your <em>relationship</em> to it by turning its intensity down. It works like a guided meditation you can run anywhere: a dial on how much of the city reaches you.<br><br>What keeps this softening and not escape: the world keeps moving the whole time. Traffic doesn\'t freeze, the crosswalk still changes, people walk by. You stay aware, social, and safe. What changes is your relationship to the environment while your access to it stays intact.'
                         },
                         {
                             title: 'SENSORY_STATES',
-                            body: 'The dial is the whole interface, and it moves through four named states:<br><br><strong class="text-on-surface/90">RAW (0–20)</strong> — the city as it is, unfiltered.<br><br><strong class="text-on-surface/90">HUSHED (20–50)</strong> — the first softening.<br><br><strong class="text-on-surface/90">STILL (50–80)</strong> — visual clutter and noise pulled back further.<br><br><strong class="text-on-surface/90">COCOON (80–100)</strong> — the destination state.<br><br>The product is named after the last position on its own dial on purpose — you don\'t launch Cocoon, you arrive at it.'
+                            body: 'The dial is the whole interface, moving through four named states:<br><br><strong class="text-on-surface/90">RAW</strong> — the city as it is, unfiltered.<br><br><strong class="text-on-surface/90">STILL</strong> — the first softening.<br><br><strong class="text-on-surface/90">HUSHED</strong> — visual clutter and noise pulled back further.<br><br><strong class="text-on-surface/90">COCOON</strong> — the destination state.<br><br>The product is named after the last position on its own dial on purpose. You don\'t launch Cocoon, you immerse in it.'
                         },
                         {
                             title: 'RECEPTION',
-                            body: 'Cocoon didn\'t place at the Makeathon, but the qualitative response was strong and specific. The concept landed against lived experience — more than one reviewer tied it straight to their own recent overwhelm in Times Square:<br><br><em class="text-on-surface/70">"Having walked through Times Square yesterday, I wished I could zone it out. This is so rad."</em><br><br>And the central design decision drew the kind of feedback that tells you it read as intentional rather than incidental:<br><br><em class="text-on-surface/70">"The dial as a single control for sensory input across visual and audio simultaneously is a strong design decision. Most accessibility tools treat those channels separately. The 1-in-6 stat reframes this as a mainstream product need, not a niche one."</em><br><br>That second comment reframed Cocoon from a niche calm-app into a mainstream sensory-regulation tool — a positioning now carried forward into how the product is shaped.'
+                            body: 'Cocoon didn\'t place at the Makeathon, but the qualitative responses were strong and specific. More than one reviewer tied the concept to their own recent overwhelm in Times Square:<br><br><em class="text-on-surface/70">"Having walked through Times Square yesterday, I wished I could zone it out. This is so rad."</em><br><br>And the central design decision read as intentional:<br><br><em class="text-on-surface/70">"The dial as a single control for sensory input across visual and audio simultaneously is a strong design decision. Most accessibility tools treat those channels separately. The 1-in-6 stat reframes this as a mainstream product need, not a niche one."</em><br><br>That second comment validated the unified-dial gesture and reframed Cocoon from a niche calm-app into a mainstream sensory-regulation tool — a positioning worth carrying forward.'
                         }
                     ]
                 },
@@ -1521,8 +1555,8 @@
                         title: 'VIS_EVOLUTION',
                         beforeLabel: 'RAW STATE',
                         afterLabel: 'COCOON STATE',
-                        before: '',
-                        after: ''
+                        before: 'https://github.com/codegician/codegician.github.io/releases/download/v1.0/cocoon-process-evolution-01.png',
+                        after: 'https://github.com/codegician/codegician.github.io/releases/download/v1.0/cocoon-process-evolution-02.png'
                     }
                 },
                 {
@@ -1533,18 +1567,28 @@
                         {
                             title: 'DESIGN_DECISIONS',
                             span: 'full',
-                            body: 'The experience is built on a layered model of the scene. Underneath everything is the <strong class="text-on-surface/90">base world</strong>: real video of the actual environment. On top, the dial composites in a <strong class="text-on-surface/90">biome</strong> — a softer, natural layer reclaiming the hard city surfaces. I built two biomes, each carrying a different feeling: Overgrowth — greenery and trees creeping over the buildings, the architecture reads as reclaimed rather than erased — and Flow — a continuous, moving layer for a steadier, soothing register.<br><br>The visual identity had to extend past a logo into the environment itself. The brand of an AR product isn\'t the mark, it\'s what the softening of reality looks and feels like from inside. The UI runs on a deliberate tension: a visionOS-inspired spatial interface — frosted-glass substrates, tracked uppercase lettering, a clinical instrument aesthetic — so the <em>control</em> reads as a precise medical-grade instrument while the <em>result</em> it produces is soft and natural.'
+                            body: 'The experience runs on a layered model. Underneath is the base world — an AI-generated simulation of Times Square. On top, the dial controls the biome overlay, a softer natural layer that reclaims the harsh, stimulative city elements. Two biomes, each encoding a different feeling: <strong class="text-on-surface/90">Overgrowth</strong> — greenery creeping over buildings so the architecture reads as reclaimed — and <strong class="text-on-surface/90">Flow</strong> — a continuous waterfall experience that brings a sense of wonder to a city element and lets water\'s calming effect carry through the scene.'
                         },
                         {
                             title: 'SYSTEMS_&_INTERACTION',
                             span: 'full',
-                            body: '<strong class="text-on-surface/90">Selective masking.</strong> The generated biome video is driven through an SVG clip-path mask keyed to the scene — the mask defines exactly which regions the biome shows through (the billboards, the building faces) and clips everything else. The natural layer reclaims specific surfaces while the real world reads normally underneath. This is the mechanism that makes the effect feel <em>placed in the world</em> rather than pasted over it.<br><br><strong class="text-on-surface/90">Two biomes, two timeline behaviors.</strong> Overgrowth is <em>accumulation</em> — its growth is tied to dial position, it advances and holds as you push deeper. Flow is <em>constant motion</em> — its calm comes from never stopping, so it flows continuously, independent of where the dial sits.<br><br><strong class="text-on-surface/90">Audio on the same dial.</strong> Turning the dial down also pulls back the scene\'s audio intensity — both channels bound to one control rather than split across separate dials, so the experience stays a single act of "turning the city down."<br><br><strong class="text-on-surface/90">How it was built.</strong> A real, interactive build in Figma Make (React/TypeScript), not a clickable mockup. Built through an AI-assisted loop using Claude through Figma\'s MCP bridge — moving directly between the design canvas and the running prototype. The transformation footage is AI-generated video, produced across Flora AI, Weave, Higgsfield, and Dreamina/Seedance. Treating AI tooling as part of the construction method — not a one-off step — is what let one person own concept, design system, and a functioning build at once.'
+                            body: '<strong class="text-on-surface/90">Selective masking.</strong> The biome video is driven through an SVG clip-path mask keyed to the scene — defining exactly which regions show through (billboards, building faces) and clipping everything else. The natural layer reclaims specific surfaces while the real world reads normally underneath. This is what makes the effect feel placed in the world rather than pasted over it. The mask paths were hand-extracted — easily the most painstaking part of the build.<br><br><strong class="text-on-surface/90">Two biomes, two timeline behaviors.</strong> They encode different ideas so they can\'t animate the same way. Overgrowth is <em>accumulation</em> — tied to dial position, it advances and holds as you push deeper. Flow is <em>constant motion</em> — its calm comes from never stopping, so it runs continuously regardless of the dial. Tuning those two scrub behaviors against each other was one of the longest debugging passes in the build.<br><br><strong class="text-on-surface/90">Audio on the same dial.</strong> Turning the dial down pulls back audio intensity too. Both channels bound to one control — the experience stays a single act of turning the city down.<br><br><strong class="text-on-surface/90">Architecture.</strong> Two-track video: the living world plays as a continuous loop on the bottom track, independent of input, while the nature-transformation clip rides on top, masked and dial-controlled.'
+                        },
+                        {
+                            title: 'WHERE_AI_FIT_IN',
+                            span: '',
+                            body: 'Initialized through an AI-assisted loop — Claude validated the Makeathon concept and wrote the initial Figma Make prompt. Inside Figma Make, Claude models handled the ongoing build. Because the Figma MCP didn\'t control Figma Make directly, the design-to-code connection was manual: when credits ran thin, code was exported from Make and ported to Claude Code to solve key blockers without stalling the project. Both the base-world environment and the transformation footage are AI-generated video, iterated across Flora, Weave, Higgsfield, and Dreamina/Seedance — the best production came from Seedance 2 mini, which powers the current prototype. Treating AI tooling as part of the construction method allowed one person to own concept, design system, and a functioning AR prototype across mediums that would otherwise have required a full team.'
                         },
                         {
                             title: 'NEXT_MILESTONES',
                             span: '',
                             showLink: true,
-                            body: '<strong class="text-on-surface/90">Prove it on real hardware.</strong> Validate the core promise — selectively replacing real-world elements, not just dimming them — on real spatial hardware, starting in the visionOS Simulator or Android XR Emulator before committing to a device.<br><br><strong class="text-on-surface/90">Let the channels come apart when they need to.</strong> Keep the single dial as the default gesture, but offer optional independent control for users whose sensory needs aren\'t symmetrical — more visual softening than audio, or the reverse. That decoupling is now an implementation candidate, pulling distinct user personas into view and building in the "mainstream, not niche" framing from the ground up.'
+                            body: '<strong class="text-on-surface/90">Prove it on real hardware.</strong> Validate the core promise — selectively replacing real-world elements, not just dimming them — on real spatial hardware, starting in the visionOS Simulator or Android XR Emulator before committing to a device.<br><br><strong class="text-on-surface/90">Let the channels come apart when they need to.</strong> Keep the single dial as the default but offer optional independent control for users whose sensory needs aren\'t symmetrical — a reviewer\'s point about audio and visual channels usually being treated separately surfaced this as a path worth taking.'
+                        },
+                        {
+                            title: 'REFLECTION',
+                            span: '',
+                            body: 'The build taught me working within constraints more than anything else. A large share of the ~18,000 Figma Make credits went into chasing perfection, so the real lesson was learning what fixes matter most to the experience and delivering an MVP. The hardest part start to finish was integration — putting it all together was the work. The deeper I got, the less there was to copy from and the more I had to iterate my way through the dark. It came down to reasoning through each layering, masking, and timing problem myself. I came out more efficient at deciding what\'s worth another iteration.'
                         }
                     ]
                 }
@@ -1567,7 +1611,7 @@
             outcome: 'A flexible brand OS that holds together across a card UI, a terminal sign, and a product world without feeling templated.',
             link: { kind: 'site', url: '#' }
         },
-        'USB': {
+                'USB': {
             title: 'ORUGAAGII_SUPPLY', meta: 'ROLE: PACKAGING  //  YEAR: 2026',
             hint: 'Goods imprint — packaging & hand-crafted labels.',
             hero: null,
@@ -1641,13 +1685,490 @@
         },
     };
 
+    const loremA = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
+    const loremB = 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+    const loremC = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.';
+    function adTemplate(name, word, hint) {
+        return {
+            title: name, meta: 'ROLE: ART DIRECTOR  //  YEAR: 2026',
+            hint: hint,
+            hero: null,
+            screens: [
+                { label: 'DIELINE', span: 'col-span-3 row-span-2' },
+                { label: 'PRINT_PROOF', span: 'col-span-3 row-span-2' },
+                { label: 'LABELS', span: 'col-span-2 row-span-1' },
+                { label: 'UNBOXING', span: 'col-span-4 row-span-1' }
+            ],
+            problem: loremA,
+            approach: loremB,
+            outcome: loremC,
+            link: null
+        };
+    }
+    Object.assign(projectData, {
+        'USB2': adTemplate('PROJECT_AD_TWO', 'AD02', 'Lorem ipsum placeholder — swap for real hint.'),
+        'USB3': adTemplate('PROJECT_AD_THREE', 'AD03', 'Lorem ipsum placeholder — swap for real hint.')
+    });
+
+    function bdTemplate(name, word, hint) {
+        return {
+            title: name, meta: 'ROLE: BRAND DESIGNER  //  YEAR: 2026',
+            hint: hint,
+            hero: { kind: 'logo', word: word },
+            screens: [
+                { label: 'MARK_SYSTEM', span: 'col-span-4 row-span-2' },
+                { label: 'COLORWAYS', span: 'col-span-2 row-span-2' },
+                { label: 'LOCKUPS', span: 'col-span-2 row-span-1' },
+                { label: 'APPLICATIONS', span: 'col-span-4 row-span-1' }
+            ],
+            screens2: [
+                { label: 'SIGNAGE', span: 'col-span-3 row-span-2' },
+                { label: 'PACKAGING', span: 'col-span-3 row-span-2' },
+                { label: 'ENVIRONMENTAL', span: 'col-span-2 row-span-1' },
+                { label: 'MERCH', span: 'col-span-2 row-span-1' },
+                { label: 'MAILER', span: 'col-span-2 row-span-1' }
+            ],
+            problem: loremA + ' ' + loremB,
+            approach: loremB + ' ' + loremC,
+            outcome: loremC + ' ' + loremA,
+            extended: [
+                {
+                    groupTitle: 'CONCEPT_RATIONALE',
+                    sections: [
+                        { title: 'WHY_THE_FORM', body: loremA, stats: [
+                            { val: 'TBD', label: 'placeholder stat' },
+                            { val: 'TBD', label: 'placeholder stat' },
+                            { val: 'TBD', label: 'placeholder stat' }
+                        ] },
+                        { title: 'COLOR_SYSTEM', body: loremB, stats: [
+                            { val: 'TBD', label: 'placeholder stat' },
+                            { val: 'TBD', label: 'placeholder stat' }
+                        ] },
+                        { title: 'OUTCOME_&_REFLECTION', body: loremC }
+                    ]
+                }
+            ],
+            link: null
+        };
+    }
+    Object.assign(projectData, {
+        'CD2': bdTemplate('AEI_ARQUITECTURA', 'AEI', 'Architecture studio identity — precision in structural form.'),
+        'CD3': bdTemplate('PROJECT_BD_THREE', 'BD03', 'Lorem ipsum placeholder — swap for real hint.')
+    });
+
+    // Templated IxD case studies — same layout/subtitles as REAP_EXCHANGE, lorem ipsum body copy.
+    // Fill in title/hint/body/screens per project via GitHub release links in chat.
+    function ixdTemplate(name, word, hint) {
+        return {
+            title: name, meta: 'ROLE: PRODUCT DESIGNER  //  YEAR: 2026',
+            hint: hint,
+            hero: { kind: 'logo', word: word },
+            screens: [
+                { label: 'HI_FI_SCREENS', span: 'col-span-3 row-span-2' },
+                { label: 'KEY_FLOW', span: 'col-span-3 row-span-2' }
+            ],
+            problem: loremA + ' ' + loremB,
+            approach: loremB + ' ' + loremC,
+            outcome: loremC + ' ' + loremA,
+            extended: [
+                {
+                    groupTitle: 'UX_RESEARCH',
+                    sections: [
+                        { title: 'MARKET_CONTEXT', body: loremA },
+                        { title: 'WHY_THIS_PROJECT', body: loremB },
+                        { title: 'COMPETITIVE_ANALYSIS', body: loremC },
+                        { title: 'SURVEYS', body: loremA + ' ' + loremC },
+                        { title: 'PERSONA_01', body: loremB },
+                        { title: 'PERSONA_02', body: loremC }
+                    ]
+                },
+                {
+                    mosaic: [
+                        { label: 'USER_FLOW', span: 'col-span-4 row-span-2' },
+                        { label: 'PROTOTYPE_FLOW', span: 'col-span-2 row-span-2' }
+                    ]
+                },
+                {
+                    groupTitle: 'DESIGN_PROCESS',
+                    sections: [
+                        { title: 'DESIGN_DECISIONS', span: 'full', layout: 'row', body: loremA },
+                        { title: 'VISUAL_EVOLUTION', span: 'full', layout: 'row', body: loremB },
+                        { title: 'HANDOFF_&_PROTOTYPE', span: '', showLink: false, body: loremC }
+                    ]
+                }
+            ],
+            link: null
+        };
+    }
+    Object.assign(projectData, {
+        'VHS2': {
+            title: 'MOMENTUM', meta: 'ROLE: PRODUCT DESIGNER  //  YEAR: 2026',
+            hint: 'An agentic civic engagement platform where reputation is earned through contribution, not self-reported.',
+            hero: { kind: 'logo', word: 'MTM' },
+            screens: [
+                { label: 'ONBOARDING', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/01-Welcome.png' },
+                { label: 'CAUSE_DIRECTORY', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/02-Cause-Directory-Desktop.png' },
+                { label: 'CHANNEL_VIEW', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/03-Channel-View-Desktop.png' },
+                { label: 'PROFILE', span: 'col-span-3 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/04-Profile-Desktop-2.png' },
+                { label: 'WORKING_GROUP_CREATION', span: 'col-span-3 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/05-WG-Creation-Desktop.png' }
+            ],
+            problem: 'Civic platforms promise grassroots power but distribute it unevenly — early adopters dominate, newcomers disengage, and the coordination work that makes movements function stays invisible. There\'s no mechanism to recognize who\'s actually building, who\'s ready to lead, and what the movement is capable of at scale.',
+            approach: 'Designed an agentic civic engagement platform where reputation is earned through contribution, not self-reported. An AI layer tracks activity across causes, scores Platform Standing, and routes members into roles — surfacing the right people for the right work without a human admin bottleneck. The complexity of multi-cause, multi-region participation stays under the surface until it\'s relevant.',
+            outcome: 'A research-grounded, end-to-end prototype covering discovery through progression — onboarding, cause directory, channel participation, profile, working group creation, and a reputation-triggered unlock moment. Led design end to end across 8 frames and a live Bubble build in progress, with an AI reputation-scoring integration planned via Claude Haiku API.',
+            extended: [
+                {
+                    groupTitle: 'UX_RESEARCH',
+                    sections: [
+                        { title: 'MARKET_CONTEXT', body: 'Civic platforms face a structural participation problem: the users who show up most get the most influence, while contribution from the broader base goes unrecognized. DAOs solved a version of this onchain, but the model hasn\'t crossed into civic organizing — where the stakes are neighborhood change, resource allocation, and policy, not token governance. The gap Momentum targets: a platform where contribution history is the credential, AI coordinates the work, and reputation scales with the movement — not just the individual.' },
+                        { title: 'WHY_MOMENTUM', body: 'Civic technology has consistently under-built for the people doing the actual work — organizers, translators, connectors, contributors who show up without titles. Momentum exists to make that work legible: to let an AI see who\'s ready for what, assign roles based on evidence, and surface the full scale of a movement to every member — not just the ones already at the center of it.' }
+                    ]
+                },
+                {
+                    mosaic: [
+                        { label: 'FRAME_01_ONBOARDING', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/02-Intent-Capture.png' },
+                        { label: 'FRAME_02_CAUSE_DIRECTORY', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/02-Cause-Directory-Mobile.png' },
+                        { label: 'FRAME_03_CHANNEL_VIEW', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/03-Channel-View-Mobile.png' },
+                        { label: 'FRAME_04_PROFILE', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/04-Profile-Mobile.png' },
+                        { label: 'FRAME_05_WORKING_GROUP_CREATION', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/05-WG-Creation-Mobile.png' },
+                        { label: 'FRAME_06_UNLOCK_MOMENT', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/06-Unlock-Moment-Desktop.png' },
+                        { label: 'FRAME_07_MOVEMENT_GRAPH', span: 'col-span-3 row-span-2' },
+                        { label: 'FRAME_08_IDEA_LAUNCHPAD', span: 'col-span-3 row-span-2' }
+                    ]
+                },
+                {
+                    groupTitle: 'DESIGN_PROCESS',
+                    sections: [
+                        { title: 'DESIGN_DECISIONS', span: 'full', layout: 'row', body: 'I worked from a frame-by-frame scope definition — each screen anchored to a specific user action and system state — into high-fidelity Figma screens built on a Material Design 3 component system. 8 frames were designed across the core participation loop, with desktop and mobile treatments where the interaction pattern required both. The navigation contract was set early and held throughout: every tap target leads somewhere, back preserves state, every terminal state has a forward action. That discipline reflects what a reviewer at a product organization would look for — no dead ends in a platform built around forward momentum.' },
+                        { title: 'FRAME_INVENTORY', span: 'full', layout: 'row', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/03-Cause-Routing.png', body: '01 Onboarding — Welcome splash → AI intent capture with suggestion chips → cause routing with 3 matched cards. 02 Cause Directory — desktop nav rail, search, filter chips, 8-card cause grid with rep bars and tier chips. 03 Channel View — desktop (nav rail + channel sidebar + chat feed + right-panel leaderboard) and mobile (top bar + feed + composer + bottom nav). 04 Profile — hero card with Platform Standing badge, stats row, per-cause reputation bars, recent contributions panel. 05 Working Group Creation — desktop modal dialog and mobile bottom sheet. 06 Unlock Moment — unlocked sidebar state, teal banner, rep footer at 75, right-panel milestone card, plus a 6-annotation design notes panel covering interaction logic and Bubble implementation. 07 Movement Graph — force-directed cause graph, node states (unlocked / locked / hover / selected), category color grouping, right panel populated on selection. 08 Idea Launchpad — community proposal feed with AI feasibility badges and a submit modal with a visible scan-and-route flow.' },
+                        { title: 'VISUAL_DIRECTION', span: 'full', layout: 'row', body: 'The MD3 component system was chosen for its accessibility baseline and its flexibility across screen sizes — not as a shortcut. The platform needs to work for organizers in São Paulo and contributors in Nairobi on the same build, and MD3\'s responsive token system supports that without per-breakpoint overrides. The teal accent introduced at 06\'s Unlock Moment was a deliberate progression signal — nothing uses teal before that frame. The color earns its meaning from scarcity: when it appears, the user knows something changed.' }
+                    ]
+                },
+                {
+                    groupTitle: 'AGENTIC_LAYER',
+                    sections: [
+                        { title: 'HOW_THE_AGENT_WORKS', body: 'The reputation system is the product\'s core mechanic. Platform Standing is a global score rolled up from per-cause contributions — it determines tier, unlocks access, and feeds the AI\'s role-assignment logic. The agent doesn\'t ask users what they want to do next; it reads contribution patterns and routes them. Roles — Organizer, Treasurer, Translator/Liaison, Connector, Spokesperson — are assigned by the agent based on observed behavior, not self-selected. That\'s the design decision with the most direct product consequence: it keeps the platform from becoming a title farm, and it makes the agent genuinely useful rather than decorative. The Claude Haiku API is the planned integration for scoring — lightweight enough to run per contribution event, capable enough to weight context (cause type, contribution frequency, peer acknowledgment) rather than just counting actions.', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.6/06-Unlock-Annotations.png' },
+                        { title: 'DATA_ARCHITECTURE', body: 'A Buildprint MCP audit of the live Bubble test branch confirmed the schema state going into the Bubble build. User table: platform_standing_score_number, platform_standing_label_text, and a reference field linking each user to their onboarding cause — global rep fields are live. Cause type: name_text, description_text, category_text — 10 seeded records across categories including Climate & Environment, Social Justice, Housing & Homelessness, Education Access, and Economic Equity. Channel type: linked to cause via cause_custom_cause, with channel_type_text distinguishing General channels from Working Groups — meaning Working Groups aren\'t a separate data type, they\'re a subtype of channel. That architectural decision simplifies the nested room count logic in the Movement Graph: it\'s a count query, not a join. Per-cause reputation breakdown is not yet built — the current schema holds a single global score per user. That\'s the primary schema gap ahead of a full live build.' }
+                    ]
+                },
+                {
+                    groupTitle: 'SYSTEMS_WHAT_SCALES_NEXT',
+                    sections: [
+                        { title: 'TRANSLATION', body: 'Machine translation is free and instant for all users. Human-verified translation (for funding docs, legal, high-stakes negotiation) is a rep-gated reward — translation access is never a barrier, translation trust is.' },
+                        { title: 'ANONYMITY_MODEL', body: 'Pseudonymous by default (handle + role badge) → role visible before name as rep grows → full identity at top tier. The agent always has full identity mapping regardless of public display — it\'s the one fully-sighted party, by design.' },
+                        { title: 'KYC_/_ZK-PROOF_SPLIT', body: 'ZK-proof attestations inside the platform for privacy-preserving tier and trust verification. Formal KYC only at the boundary where funds cross into the regulated external system.' },
+                        { title: 'SKIN_IN_THE_GAME', body: 'Reputation stake by default (lose points on abandoned pledges), keeping no-money-barrier-to-entry intact. Financial stake is an optional upgrade once bank/token rails are live, for treasury-tier causes only.' },
+                        { title: 'AGENTIC_SCALE_UNLOCKS', body: 'Platform-wide agent capabilities expand when the movement crosses scale thresholds — distinct from 06\'s individual unlock. Roles expand, coordination capacity increases, and PMO tooling graduates from lightweight task tracking to a formal cause directorate.' }
+                    ]
+                },
+                {
+                    groupTitle: 'HANDOFF_&_OUTCOME',
+                    sections: [
+                        { title: 'HANDOFF_&_PROTOTYPE', span: 'full', layout: 'row', showLink: true, body: 'High-fidelity screens built in Figma on MD3 components, exported to Bubble via the Figma-to-Bubble Chrome plugin. Bubble test branch active. Buildprint MCP connected for schema auditing and data investigation.' },
+                        { title: 'OUTCOME', span: 'full', layout: 'row', body: 'The project delivered a complete participation loop — 8 designed frames spanning onboarding through idea submission, a live Bubble build in progress, and a documented agentic architecture covering reputation scoring, role assignment, and platform-scale unlocks. The Movement Graph (07) makes the full scale of the movement visible to every member, not just those already at the center — the portfolio\'s macro counterpart to 06\'s personal unlock moment. Next milestone: per-cause reputation breakdown in the Bubble schema, Claude Haiku API integration for live Platform Standing scoring, and usability testing against the onboarding-to-first-contribution flow.' }
+                    ]
+                }
+            ],
+            link: null
+        },
+        'VHS3': {
+            title: 'REAP_MARKETS', meta: 'ROLE: PRODUCT STRATEGY, UX ARCHITECTURE, DESIGN SYSTEM, FIGMA EXECUTION  //  TYPE: SELF-INITIATED  //  YEAR: 2025',
+            hint: 'Forecasting exchange — discipline over noise.',
+            hero: { kind: 'logo', word: 'REAP' },
+            screens: [
+                { label: 'MARKET_FEED', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Markets.-.Desktop.-.Hi-Fi.Light.png' },
+                { label: 'TRADE_DETAIL', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Market.Detail.-.Desktop.-.Hi-Fi.Light.png' },
+                { label: 'CALIBRATION_QUIZ', span: 'col-span-2 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Quiz.-.Desktop.-.Hi-Fi.Light.png' },
+                { label: 'TRADE_JOURNAL', span: 'col-span-2 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Trade.Journal.-.Desktop.-.Hi-Fi.png' },
+                { label: 'HEADLINES_ANALYZER', span: 'col-span-2 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Headlines.-.Desktop.-.Hi-Fi.png' }
+            ],
+            problem: 'A skilled forecaster needs a prediction market built for discipline, because dominant platforms bury every market in noise — headlines, hype, and unfiltered volume — with no separation between a reasoned position and an emotional reaction to whatever is trending.',
+            approach: 'Built the exchange as a standalone experience rather than a feature bolted onto the existing Reap wallet. Every decision works against what buries a market in noise: an expertise-filtered feed, a calibration quiz that generates a Brier score before the first trade, a trade journal capturing pre- and post-trade reasoning, and a headlines analyzer that surfaces bias flags and price-impact data side by side. The wallet is demoted to a utility — a balance pill in the header that expands into a drawer.',
+            outcome: 'Hi-Fi design complete across light and dark modes at desktop resolution, spanning four flow sections: Discovery, Onboarding, Main App, and Trade & Profile. One shared token set across V1 wallet and V2 exchange. Next milestone: adapting to a 393px mobile breakpoint.',
+            extended: [
+                {
+                    groupTitle: 'UX_RESEARCH',
+                    sections: [
+                        {
+                            title: 'COMPETITIVE_CONTEXT',
+                            body: 'Polymarket and Kalshi are the dominant platforms. Both surface everything at once — every open market, trending headline, and volume spike — with no mechanism for separating a reasoned call from a reactive one. Green/red win-loss coloring primes a reaction before a user has read the market. There is no calibration layer, no track record, no way to distinguish a skilled forecaster from a lucky guesser.<br><br>Phantom bolted prediction markets onto its existing wallet shell as a menu item — the prediction experience subordinated to an interface built for something else. That framing shaped the first structural decision in this project.'
+                        },
+                        {
+                            title: 'STRUCTURAL_DECISION',
+                            body: 'Reap started as a Web3 wallet — a charge card and treasury tool for crypto-native professionals. The design challenge: add the predictive exchange as a menu item inside the wallet (the Phantom approach) or build it as the primary surface and demote the wallet to a utility.<br><br>Building the exchange as a standalone experience meant every aspect could be designed for the forecaster from the ground up. The wallet still exists — accessible via a balance pill in the header that expands into a drawer for deposits, transfers, withdrawals, and transaction history. Present when needed and out of the way otherwise.',
+                            img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Wallet.-.Desktop.-.Hi-Fi.Light.png'
+                        }
+                    ]
+                },
+                {
+                    mosaic: [
+                        { label: 'MARKET_FEED_DARK', span: 'col-span-4 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Markets.-.Desktop.-.Hi-Fi.png' },
+                        { label: 'TRADE_DETAIL_DARK', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Market.Detail.-.Desktop.-.Hi-Fi.png' }
+                    ]
+                },
+                {
+                    groupTitle: 'DESIGN_PROCESS',
+                    sections: [
+                        {
+                            title: 'FILTERING_THE_NOISE',
+                            body: 'Every decision works against what buries a market in noise. Dropped standard green/red win-loss coloring — it primes a reaction before a user has read the market. The feed is filtered by declared expertise domain instead of showing every open market at once, so the home surface reflects what a user actually knows rather than everything trending.',
+                            img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Expertise.-.Desktop.-.Hi-Fi.Light.png'
+                        },
+                        {
+                            title: 'CALIBRATION_&_ONBOARDING',
+                            body: 'Onboarding is a calibration quiz that scores forecasting accuracy before the first trade. It feeds the Brier score and public track record anchoring a user\'s profile. The friction filters for the target persona — forecasters who want to demonstrate skill — and self-selects against reactive, volume-driven behavior.',
+                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.4/Results.-.Desktop.-.Hi-Fi.Light.png']
+                        },
+                        {
+                            title: 'TRADE_JOURNAL',
+                            body: 'Pre- and post-trade reasoning capture sits next to every position, tying a trade to the user\'s own stated logic instead of leaving it as an isolated, unexplained bet. This turns a prediction into a reviewable, improvable practice — the direct mechanism for solving the reasoned-versus-reaction problem.',
+                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.4/Trade.Journal.png', 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Track.Record.-.Desktop.-.Hi-Fi.png']
+                        },
+                        {
+                            title: 'HEADLINES_ANALYZER',
+                            body: 'A curated geopolitical news feed sits adjacent to relevant markets, pulled through the Guardian API. Headlines are auto-flagged for bias with the specific type surfaced on click. A chart view shows where a headline dropped and how the market moved in response — cause and reaction visible side by side. The platform also flags whether a market currently looks influenced and in which direction, surfacing reaction in progress.<br><br><em>In progress:</em> historical data on similar past trades and how they played out, giving a forecaster a base rate to reason from instead of judging a market in isolation.',
+                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.4/Headlines.png']
+                        },
+                        {
+                            title: 'DESIGN_SYSTEM',
+                            body: 'V2 carries V1\'s visual language forward: IBM Plex Sans/Mono, an olive-black primary, thick borders, and 4px offset shadows. What changed is the register — V2 runs dark-mode-first at desktop. The neobrutalist shadow system reads with weight there; the same borders on white look decorative, on dark they look structural. V1 stays light-mode mobile as the legacy surface. One shared token set spans both products for visual consistency.',
+                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.4/Dashboard.-.Desktop.-.Hi-Fi.Light.png', 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Dashboard.-.Desktop.-.Hi-Fi.png']
+                        },
+                        {
+                            title: 'WHERE_AI_FIT_IN',
+                            body: 'Claude validated whether the predictive markets feature makes sense under the Reap brand, then helped solidify scope and produce the brief. The V1 and V2 systems share one token set so artifacts generated through Claude Code come out visually unified — extending the brand from one product to the next. Output is ported to Claude Design for a testable prototype. Once tested, the intention is to port back to Claude Code in React and Tailwind against the Kalshi and Polymarket APIs.'
+                        }
+                    ]
+                }
+            ],
+            link: null
+        },
+        'VHS4': {
+            title: 'PUERTO_MOROS', meta: 'ROLE: INFORMATION ARCHITECTURE, SYSTEMS & INTERACTION DESIGN, DESIGN SYSTEM FOUNDATION, ART DIRECTION  //  TOOLS: FIGMA, CLAUDE CODE, FLORA AI  //  TYPE: MEMBERS-ONLY NETWORK STATE, ORUGAAGII ENTERPRISE  //  YEAR: 2025',
+            hint: 'A members-only network state reimagining Stays past the Airbnb model — rotational tenure, contribution-based co-ownership across properties worldwide.',
+            hero: { kind: 'logo', word: 'PM' },
+            screens: [
+                { label: 'FEED_ADAPTIVE_HERO', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.7/Vertical.Dashboard.Carousel.v1.png' },
+                { label: 'EXPLORE_LISTINGS', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.7/Feed.New.Member.png' },
+                { label: 'MANAGE_PROPERTY', span: 'col-span-2 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.7/Manage.Property.png' },
+                { label: 'CONTRIBUTION_FLOW', span: 'col-span-2 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.7/Mind.Map.png' },
+                { label: 'MARKETPLACE_&_EVENTS', span: 'col-span-2 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.7/Shop.Product.List.png' }
+            ],
+            problem: 'Historically marginalized digital nomads need to build toward home ownership while still moving freely between cities, because generations of exclusion from traditional homeownership left them without a reliable means to build generational wealth. Rotational tenure across a global network is how Puerto Moros makes that ownership achievable.<br><br>Standard accommodation apps assume a linear transaction — browse, book, stay, leave. Puerto Moros members don\'t do that. A member might rent four locations across the world, three months each, with permanence, so when they\'re away another member occupies the same unit. They can co-own through monthly payments, lower what they owe by contributing labor (running the hydroponics harvest, staffing the on-site restaurant), sublease their own slot while away, and in some cases link their name to a property for residency or tax purposes.',
+            approach: 'The intention behind the product is to let members feel like they\'re making real progress toward generational wealth while still living the fullness of the digital nomad lifestyle they\'ve chosen. The use case — rotational, contribution-based, multi-party ownership — is new, but Airbnb\'s underlying pattern — browse, book, understand what you\'re getting — is still a solid starting point to build from. What had to change is what the interface needs to carry: not a one-night decision, but a member\'s actual stake in property. The project is built on a thoroughly mapped information architecture and a tokens-first design system to hold that weight.<br><br>The IA was audited one level deep before starting the wireframes. The high-priority flows — booking a home, managing a co-owned property, enrolling in a contribution — were mapped for all possible outcomes: approved, pending, declined, error. Given the stakes, a member reaching a dead end mid-booking was a real risk. The standing rule held everywhere: back preserves entered data, every optional step has a skip, an exit-home action returns to the Feed from anywhere, and every terminal state — including a decline or an error — has at least one forward action.',
+            outcome: 'Delivered: a complete information architecture with every core flow mapped one level deep and audited for dead ends, a locked design token system and component library built in Claude Code, a full set of directed listing and lifestyle imagery with a resolved integration plan, and a testable interactive prototype built out in Claude Design. The prototype was demoed to the brand\'s community, raising awareness and generating interest — giving the team a working system to point to in capital-raising conversations. Next milestone: early access for members to test the experience.',
+            extended: [
+                {
+                    groupTitle: 'AT_A_GLANCE',
+                    sections: [
+                        {
+                            title: 'AT_A_GLANCE',
+                            body: '— Tokens-first, component-driven build brief handed to Claude Code as a fixed order of operations<br><br>— Tokens, design system, and wireframes built in Claude Code, then carried into Claude Design as a testable prototype<br><br>— Listing photography directed for belonging, carried through to alt text'
+                        }
+                    ]
+                },
+                {
+                    groupTitle: 'THE_PROCESS',
+                    sections: [
+                        {
+                            title: '01_WEB3_FRONT_DOOR',
+                            body: 'Rather than separate landing experiences for a new member versus an active one, Feed uses a single adaptive hero card: an onboarding prompt for someone with no home yet, a rotation and tenure status card for an active member. One nav, one mental model, state-aware rather than forked by user type.',
+                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.7/Feed.New.Member.png', 'https://github.com/codegician/codegician.github.io/releases/download/v1.7/Feed.Active.Member.png']
+                        },
+                        {
+                            title: '02_ONBOARDING_QUIZ',
+                            body: 'Members-only apps risk over-gating. The quiz that matches a member to a home is reachable anytime from Explore and fully optional, so nobody is blocked from browsing the network while qualifying for it.',
+                            img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.7/Contribution.Type.Detail.png'
+                        },
+                        {
+                            title: '03_OWNERSHIP_COMPLEXITY',
+                            body: 'A member\'s home list shows enough at a glance — status, tenure progress, active contributions — to communicate the system\'s real richness, while one fully designed Manage Property screen carries the actual depth: rotation schedule, sublease toggle, contribution settings, and a maintenance handoff log. One genuinely complete example proves the system works without building full depth into every property.',
+                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.7/Active.Contribution.Manage.png', 'https://github.com/codegician/codegician.github.io/releases/download/v1.7/Contribution.Settings.Overview.png']
+                        },
+                        {
+                            title: '04_TRANSPARENCY_OVER_SWIPE',
+                            body: 'A swipe-to-decide gesture was rejected — a disposable, Tinder-style dismissal undersells the stakes of a multi-month rotational commitment. In its place, Compare lets a member shortlist two or three properties and see price, rotation length, ownership type, and fit signals side by side, respecting the weight of the decision instead of gamifying it.'
+                        },
+                        {
+                            title: '05_REPRESENTATIVE_DESIGN',
+                            body: 'Listing photography was directed to include people from the target community — mid-activity, never posed, never looking at the camera — departing from the empty-room convention standard to mainstream platforms. For a members-only network built around Afro-diaspora sovereignty, an empty room signals that anyone could be here; a lived-in one, with people who reflect the community as owners and residents rather than staff, signals belonging. Alt text was written to preserve that same signal for screen reader users rather than only describing the room.',
+                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.7/Property.Detail.Gallery.Slide.2.png', 'https://github.com/codegician/codegician.github.io/releases/download/v1.7/Property.Detail.Gallery.Slide.3.png']
+                        }
+                    ]
+                },
+                {
+                    groupTitle: 'WHERE_AI_FIT_IN',
+                    sections: [
+                        {
+                            title: 'WHERE_AI_FIT_IN',
+                            body: 'Tokens, design system, and wireframes were built in Claude Code using a project brief generated in Claude — based on thorough research and planning that surfaced blind spots and validated the proposed design direction. Throughout the build, the system stayed editable at scale by using components to build each screen. Listing and lifestyle imagery was generated separately in Flora AI and integrated. From there, the work moved into Claude Design, carrying the tokens and component system forward into a testable prototype. That handoff — a code-level system into an interactive prototype — is what made the flows actually clickable and testable instead of just specified.'
+                        }
+                    ]
+                },
+                {
+                    groupTitle: 'RESULT_&_IMPACT',
+                    sections: [
+                        {
+                            title: 'THE_RESULT',
+                            body: 'Delivered: a complete information architecture with every core flow mapped one level deep and audited for dead ends, a locked design token system and component library built in Claude Code, a full set of directed listing and lifestyle imagery with a resolved integration plan, and a testable interactive prototype built out in Claude Design.'
+                        },
+                        {
+                            title: 'IMPACT',
+                            body: 'The testable prototype reached a milestone: it was demoed to the brand\'s community, raising awareness and generating interest in the product itself. That demo is what now lets the team drive conversations geared toward raising capital, since there\'s a working system to point to rather than a description of one. Next milestone: early access for members to test the experience.'
+                        }
+                    ]
+                }
+            ],
+            link: null
+        },
+        'VHS5': {
+            title: 'PUERTO_MOROS_LEDGER', meta: 'ROLE: CONCEPT, SYSTEMS & DATA MODELING, INTERACTION DESIGN, USABILITY RESEARCH, TECHNICAL BUILD DIRECTION  //  TYPE: ORUGAAGII ENTERPRISE  //  YEAR: 2025',
+            hint: 'Steward dashboard — turning a property list into a visible economy.',
+            hero: { kind: 'logo', word: 'PML' },
+            screens: [
+                { label: 'FULL_DASHBOARD', span: 'col-span-4 row-span-2' },
+                { label: 'NODE_DETAIL_PANEL', span: 'col-span-2 row-span-2' },
+                { label: 'NODE_TYPOLOGY', span: 'col-span-2 row-span-1' },
+                { label: 'DEPENDENCY_MAP', span: 'col-span-2 row-span-1' },
+                { label: 'ROLE_TOGGLE', span: 'col-span-2 row-span-1' }
+            ],
+            problem: 'A Puerto Moros steward responsible for the health of the network\'s productive assets needs a single view of what the state produces, how its parts depend on each other, and where they\'re falling short — because without one, the health of the commons stays invisible until a shortage or breakdown has already happened. The TNS census format tracks population, income, and real estate. It breaks the moment a network state is also a productive economy with farms, hydroponics towers, hotels, cafés, and residences that depend on each other, and members who contribute labor to keep them running.',
+            approach: 'Borrowed the TNS census\'s legibility — an abstract society made visible in a single glance — and extended it to cover what the census format doesn\'t: a network state that produces things, not only houses people. Four systems decisions shaped everything: a seven-node typology derived from real operating logic, dependency modeling that shows who a failure would drag down, a health flag tied to contribution level with a contributor estimate, and role-gated data that expresses the council governance structure as an interface rule.',
+            outcome: 'A working, tested V1 prototype covering the full node typology, dependency modeling, role-gated data, and the needs-hands mechanic. A moderated usability session with synthesized findings. A real geographic asset sourced and optimized (Americas SVG, 1.1MB to 600KB losslessly, all 122 country and 679 path IDs intact). A V2 specification where every design change traces back to a specific session finding.',
+            extended: [
+                {
+                    groupTitle: 'SYSTEMS_DESIGN',
+                    sections: [
+                        {
+                            title: 'NODE_TYPOLOGY',
+                            body: 'Seven node types — hydroponics towers, farms, cafés, hotels, residences, transport hubs, warehouses — came directly from how Puerto Moros already described its own footprint. Overlap was handled deliberately: a residence with a hydroponics farm inside it is one node with an embedded function badge, since that\'s how the real asset works.',
+                            stats: [
+                                { val: '7', label: 'node types derived from real operating logic' },
+                                { val: '122', label: 'country IDs preserved in the Americas SVG after optimization' }
+                            ]
+                        },
+                        {
+                            title: 'DEPENDENCY_MODELING',
+                            body: 'Nodes connect by what they supply each other — a hydroponics tower feeding several cafés and a residence, a farm feeding the tower. This is what turns the dashboard from a property list into a visible economy: it shows who a failure would drag down with it.'
+                        },
+                        {
+                            title: 'ROLE_GATING',
+                            body: 'Puerto Moros already has a council structure (Land & Yield, Hospitality, Infrastructure, plus a small inner circle), so financial and yield data is gated by role. A member sees the map and node health; a steward also sees GDP, per-node revenue, and yield. The gating is the governance structure itself expressed as an interface rule — not a privacy feature, but a reflection of how the organization actually works.'
+                        }
+                    ]
+                },
+                {
+                    groupTitle: 'USABILITY_RESEARCH',
+                    sections: [
+                        {
+                            title: 'WHAT_THE_SESSION_FOUND',
+                            body: 'The usability session surfaced one distinction that shaped everything after: the underlying systems model tested as sound while the interface failed to explain itself.<br><br>The model held up. The tester correctly read the density encoding and inferred the role-gating without being told. The interface didn\'t hold up. Five minutes in, without having clicked the map, the tester asked "I\'m looking for what?" When asked to check a specific location, they reached for the list rather than the map. Terms like "steward," "node revenue," and "needs hands" had to be guessed at. The dark theme read as "a battleship." One finding reframed a decision rather than flagging a bug: the "needs hands" flag was read as "a job post" — a usable mental model the interface hadn\'t yet leaned into.'
+                        },
+                        {
+                            title: 'V2_EVIDENCE_TRACE',
+                            body: '"I\'m looking for what?" → a persistent strapline under the masthead stating what the dashboard is for.<br><br>Map not recognized as interactive → kept it primary, fixed discoverability: larger click targets, stronger hover response, a one-time fading tap hint on load.<br><br>Terminology had no support → plain-English captions in view at all times; the role toggle reads its own logic directly beneath it rather than relying on tooltips.<br><br>"Battleship" read → dependency edges at low opacity by default, reaching full intensity only on hover or selection.<br><br>Four equal stat tiles blurred together → one hero metric (Population) and three secondary tiles each paired with a gauge, number, and caption.<br><br>The "job post" model → kept and the needs-hands copy rewritten to lean into it.<br><br>Added a year-by-year growth timeline, since the census concept this extends is explicitly about growth as legitimacy.'
+                        }
+                    ]
+                },
+                {
+                    groupTitle: 'DESIGN_PROCESS',
+                    sections: [
+                        {
+                            title: 'V1_BUILD',
+                            body: 'V1 was built solo as a working React prototype on the network\'s locked design tokens — a carved-obsidian, oxidized-copper, deep-indigo material language built to avoid both generic AI-minimalist defaults and neon-Afrofuturist cliché. Geography used abstract stylized landmasses rather than real coastline data, a deliberate scoping choice to prove the interaction model before investing in geographic accuracy. The result was fully interactive: clickable nodes with a detail panel, live filtering, a working member/steward toggle, and dependency lines that highlight on selection.'
+                        },
+                        {
+                            title: 'WHERE_AI_FIT_IN',
+                            body: 'V2 was handed off as a fully specified brief plus a paste-ready prompt for Figma Make, alongside the V1 source and the cleaned map. The brief requires Make to produce a complete interactive flow map — every clickable element, panel, and zoom tier — before writing any code, so nothing in the final build is a dead link or non-functional placeholder. It specifies exact tokens, which V1 logic carries forward unchanged, and which parts change and why, tracing each back to the finding that produced it.<br><br>The placeholder geography was resolved here: a public-domain Americas SVG was sourced, a low-poly simplification tested and rejected after it distorted Central America\'s borders, and the file instead cleaned losslessly — stripping editor metadata and excess coordinate precision to cut it from 1.1MB to roughly 600KB with zero change to coastline accuracy and all 679 path IDs preserved for hover and fill logic.'
+                        }
+                    ]
+                }
+            ],
+            link: null
+        },
+        'VHS6': {
+            title: 'FASTIN', meta: 'ROLE: RESEARCH, USABILITY TESTING, UX/UI DESIGN, PROTOTYPING, MD3 COMPONENT LIBRARY  //  TYPE: SELF-INITIATED  //  YEAR: 2025',
+            hint: 'Delivery app for people who think about food, not just order it.',
+            hero: { kind: 'logo', word: 'FASTIN' },
+            screens: [
+                { label: 'HOME_FASTING_STATE', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.4.Home-2.png' },
+                { label: 'MEAL_DETAIL', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.5.Meal.Detail.png' },
+                { label: 'PANTRY_FLOW', span: 'col-span-2 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Add.Meal.png' },
+                { label: 'AGENT_SETTINGS', span: 'col-span-2 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.10.Agent.Settings.png' },
+                { label: 'CHECKOUT', span: 'col-span-2 row-span-1', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.7.Checkout.png' }
+            ],
+            problem: 'A person treating fasting as a lifestyle needs meals aligned with their eating schedule, nutritional goals, and pantry inventory — because delivery platforms are built for impulse and convenience, not context. What to order depends on where you are in your cycle, what you already have, and what your body needs right now, and no existing platform models any of it. Research confirmed the pattern: menu information is shallow, nutritional detail is buried or absent, and peak-hour ordering demands the most effort at the moment cognitive load is highest.',
+            approach: 'The app knows your context and acts on it. An AI agent handles scheduling and ordering against rules set once at onboarding — fasting schedule, budget, allergens, goals, and autonomy level — so asking permission at the moment cognitive load is highest is the opt-in, not the default. A pantry and recipe layer connects what the user already has to what gets ordered next. Nutritional detail sits on every meal card so every order is an informed one.',
+            outcome: 'A high-fidelity clickable prototype across 11 screens and 6 connected flows, with a complete mock purchase flow so the concept holds up end to end. A structured usability study surfaced two specific affordance failures with clear diagnoses — a quantity dropdown read as static text by 2 of 4 participants, a warning banner bypassed by 2 of 4 — and both fixes are scoped and queued for the next build. Primary elements meet WCAG AA contrast.',
+            extended: [
+                {
+                    groupTitle: 'UX_RESEARCH',
+                    sections: [
+                        {
+                            title: 'THE_PROBLEM',
+                            body: 'Delivery platforms are built for impulse and convenience. For someone with a structured eating pattern, convenience without context is friction in disguise — what to order depends on fasting state, pantry contents, and nutritional need, and none of that is modeled by any existing platform.',
+                            stats: [
+                                { val: '11', label: 'screens across 6 connected flows' },
+                                { val: '4', label: 'participants in the structured usability study' },
+                                { val: '2', label: 'specific interaction failures identified and queued for the next build' }
+                            ]
+                        },
+                        {
+                            title: 'USABILITY_STUDY',
+                            body: 'A structured study on the pantry and recipe prototype with 4 participants matching the target audience — people who cook regularly and manage dietary needs. Two interactions tested: a quantity selector on the Add Items screen and a nutrition summary on recipe cards.<br><br><strong class="text-on-surface/90">Finding 1:</strong> 2 of 4 participants read the quantity dropdown as static text and never interacted with it — an affordance failure.<br><br><strong class="text-on-surface/90">Finding 2:</strong> 2 of 4 bypassed the pantry warning banner, which sat too low to interrupt the existing scanning pattern.<br><br>Both fixes are scoped and queued. The value is catching them in testing before they ship, not after.',
+                            img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Task.1.png'
+                        },
+                        {
+                            title: 'PLANNED_FIXES',
+                            body: 'Replace the quantity dropdown with a stepper that defaults to 1 and taps up or down directly — the finding was specific to quantity entry; standard selection dropdowns in the Find a Recipe screen were not implicated.<br><br>Move the warning banner to the top of the screen with stronger contrast so it reads as a call to action rather than a supplementary note.'
+                        }
+                    ]
+                },
+                {
+                    mosaic: [
+                        { img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.1.Onboarding_.Welcome.png', label: 'ONBOARDING_WELCOME', span: 'col-span-3 row-span-2' },
+                        { img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.8.Order.Confirmation.png', label: 'ORDER_CONFIRMATION', span: 'col-span-3 row-span-2' }
+                    ]
+                },
+                {
+                    groupTitle: 'DESIGN_PROCESS',
+                    sections: [
+                        {
+                            title: 'STRUCTURE',
+                            body: 'Rebuilt the pantry flow as four screens (Search, Pantry, Add Items, Recipe Results) in Material Design 3, then added the delivery layer: onboarding, home, meal detail, schedule, checkout, order history. 11 screens across 6 flows, all connected. Checkout includes a complete mock purchase flow — order summary, address, payment, confirmation — so the concept holds up end to end.',
+                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.2.Onboarding_.Setup.png', 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.11.Order.History.png']
+                        },
+                        {
+                            title: 'VISUAL_SYSTEM',
+                            body: 'Meal cards are full-color tiles, turning the home feed into something closer to browsing a menu than scanning a list. Blue is the single action color, carrying every primary CTA (Schedule eats, Edit Order) so the tappable path stays obvious against colorful cards. Nutrition and dietary detail sit directly on the meal detail screen: dietary tags and calorie count as blue labels, allergens called out in bold caps. The fasting status badge ("Day 3 of 5, Fasting") is styled in the same register as the meal cards — it reads as a product feature, not a system alert.',
+                            imgs: ['https://github.com/codegician/codegician.github.io/releases/download/v1.5/Calendar.png', 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Day.View.png']
+                        },
+                        {
+                            title: 'AGENTIC_LAYER',
+                            body: 'Fasting schedule, budget, allergens, goals, and autonomy level are captured once at onboarding. After that, the agent executes delivery scheduling without per-order approval by default. A conservative "approve each order" mode exists as a toggle. A disabled "Connect your own assistant" state in Agent Settings marks the forward vision: users running nutrition planning through their own AI tools who want Fastin to handle execution while keeping their existing setup.',
+                            img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.3.Onboarding_.Agent.Autonomy.png'
+                        },
+                        {
+                            title: 'ACCESSIBILITY',
+                            body: 'Primary elements meet WCAG AA contrast. Every interactive element carries a visible text label. The Add button folds its selection count into the label string ("Add 2 selected") so screen readers announce full state in a single pass.'
+                        },
+                        {
+                            title: 'WHERE_AI_FIT_IN',
+                            body: 'Food photography for the meal cards was generated with Flora, background-removed, and imported as MD3-compliant reusable components in the Figma library — rather than sourced or shot. This is what let full-color meal cards work as a design decision without a photography budget or shoot.'
+                        }
+                    ]
+                }
+            ],
+            link: null
+        },
+    });
+
     // Channel order: scroll sections 1-4
     const CHANNELS = [
         { type: null, title: 'MOORS_HOUSE', tag: '' },
-        { type: 'VHS',  title: 'REAP_EXCHANGE',    tag: 'INTERACTIVE // FINTECH',     accent: '#96ccff',
+        { type: 'VHS',  title: 'REAP_EXCHANGE',    tag: 'INTERACTIVE // FINTECH',     accent: '#aac8b4',
           files: ['REAP_CARD_FLOW.fig — 48 frames', 'COLLATERAL_STATES.mp4 — 02:14', 'TOKEN_LEDGER.pdf — 1.2MB'] },
-        { type: 'FILM', title: 'PUERTO_MOROS',     tag: 'SPATIAL // WAYFINDING',      accent: '#6E63E8',
-          files: ['TERMINAL_SIGNAGE.pdf — 6.8MB', 'NIGHT_SURVEY.mp4 — 04:40', 'TYPE_AT_SCALE.fig — 22 frames'] },
+        { type: 'FILM', title: 'COCOON',           tag: 'SPATIAL // AR',              accent: '#6E63E8',
+          files: ['DIAL_STATES.fig — 80+ frames', 'BIOME_COMPOSITE.mp4 — 01:48', 'DESIGN_SYSTEM.pdf — 2.1MB'] },
         { type: 'CD',   title: 'ORUGAAGII',        tag: 'BRANDING // IDENTITY',       accent: '#ff7f50',
           files: ['WORDMARK_LIVING.mp4 — 00:52', 'BRAND_OS.pdf — 3.1MB', 'VOICE_RULES.md — 14KB'] },
         { type: 'USB',  title: 'ORUGAAGII_SUPPLY', tag: 'ART_DIRECTION // PACKAGING', accent: '#ede0dc',
@@ -1655,14 +2176,14 @@
         { type: null, title: 'COFFEE_TABLE', tag: 'ABOUT' }
     ];
     const typeToChannel = { 'VHS': 1, 'FILM': 2, 'CD': 3, 'USB': 4 };
-    const accentByType = { 'VHS': '#96ccff', 'FILM': '#6E63E8', 'CD': '#1400FF', 'USB': '#ede0dc', 'LABWEAR': '#1400FF' };
+    const accentByType = { 'VHS': '#aac8b4', 'VHS2': '#03BFA5', 'VHS3': '#7C3AED', 'VHS4': '#F08365', 'VHS5': '#8C5E3D', 'VHS6': '#1547CE', 'FILM': '#6E63E8', 'CD': '#1400FF', 'CD2': '#516C4A', 'USB2': '#f2c94c', 'USB3': '#e0a83a', 'CD2': '#3d5cff', 'CD3': '#0d2fb0', 'USB': '#ede0dc', 'LABWEAR': '#1400FF' };
     // The BD object is a CD that represents the Labwear Studios project
-    const typeToProject = { 'VHS': 'VHS', 'FILM': 'FILM', 'USB': 'USB', 'CD': 'LABWEAR' };
+    const typeToProject = { 'VHS': 'VHS', 'FILM': 'FILM', 'USB': 'USB', 'USB2': 'USB2', 'USB3': 'USB3', 'CD': 'LABWEAR' };
 
     const createHoloProp = (type, index, total, color = 0x4682B4) => {
         const group = new THREE.Group();
         let mesh;
-        if (type === 'VHS') {
+        if (type.startsWith('VHS')) {
             // INTERACTIVE — Game Boy-style cartridge
             mesh = new THREE.Mesh(new THREE.BoxGeometry(0.78, 0.86, 0.12), createHoloMaterial(color));
             group.add(mesh);
@@ -1670,6 +2191,23 @@
             const label = new THREE.Mesh(new THREE.BoxGeometry(0.56, 0.46, 0.04), createHoloMaterial(0xffffff));
             label.position.set(0, 0.12, 0.08);
             group.add(label);
+            // brand logo decal, traditional cartridge label position
+            if (type === 'VHS' || type === 'VHS2' || type === 'VHS3' || type === 'VHS4' || type === 'VHS5' || type === 'VHS6') {
+                const logoUrl = type === 'VHS' ? 'uploads/Logo.png' : type === 'VHS2' ? 'uploads/objectlgo.png' : type === 'VHS3' ? 'uploads/Logo copy.png' : type === 'VHS4' ? 'uploads/PMv2-obj.png' : type === 'VHS5' ? 'uploads/pm-black.png' : 'uploads/Fastin.png';
+                const maxW = 0.44, maxH = 0.30;
+                const logoDecal = new THREE.Mesh(new THREE.PlaneGeometry(maxW, maxW * 0.3), null);
+                const logoTex = new THREE.TextureLoader().load(logoUrl, function(tex){
+                    const ar = (tex.image.width || 1) / (tex.image.height || 1);
+                    let w = maxW, h = maxW / ar;
+                    if (h > maxH) { h = maxH; w = maxH * ar; }
+                    logoDecal.geometry.dispose();
+                    logoDecal.geometry = new THREE.PlaneGeometry(w, h);
+                });
+                logoTex.colorSpace = THREE.SRGBColorSpace;
+                logoDecal.material = new THREE.MeshStandardMaterial({ map: logoTex, transparent: true, opacity: 0.6, emissive: 0xffffff, emissiveIntensity: 0.15, side: THREE.FrontSide, depthWrite: false });
+                logoDecal.position.set(0, 0.12, 0.105);
+                group.add(logoDecal);
+            }
             // grip ridges along the top
             const ridgeGeo = new THREE.BoxGeometry(0.6, 0.04, 0.06);
             for (let r = 0; r < 3; r++) {
@@ -1681,13 +2219,44 @@
             const slot = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.06, 0.04), createHoloMaterial(0xffffff));
             slot.position.set(0, -0.40, 0.05);
             group.add(slot);
-        } else if (type === 'CD') {
-            // BRANDING — flat disc, Labwear blue with LW cover art
-            const coverTex = new THREE.TextureLoader().load('https://github.com/codegician/codegician.github.io/releases/download/v1.2/lws-cover.png');
-            coverTex.colorSpace = THREE.SRGBColorSpace;
+        } else if (type === 'CD' || type === 'CD2' || type === 'CD3') {
+            // BRANDING — flat disc; CD carries Labwear cover art, CD2/CD3 use a generated placeholder texture
+            let coverTex;
+            if (type === 'CD') {
+                coverTex = new THREE.TextureLoader().load('uploads/lws-cover.png');
+                coverTex.colorSpace = THREE.SRGBColorSpace;
+            } else if (type === 'CD2') {
+                const cc = document.createElement('canvas'); cc.width = 512; cc.height = 512;
+                const ccx = cc.getContext('2d');
+                ccx.fillStyle = '#516C4A';
+                ccx.fillRect(0, 0, 512, 512);
+                coverTex = new THREE.CanvasTexture(cc);
+                coverTex.colorSpace = THREE.SRGBColorSpace;
+                const logoImg = new Image();
+                logoImg.onload = function() {
+                    const scale = Math.min(512 * 0.78 / logoImg.width, 512 * 0.78 / logoImg.height);
+                    const w = logoImg.width * scale, h = logoImg.height * scale;
+                    ccx.drawImage(logoImg, (512 - w) / 2, (512 - h) / 2, w, h);
+                    coverTex.needsUpdate = true;
+                };
+                logoImg.src = 'uploads/Aei-transparentbg.png';
+            } else {
+                const c = document.createElement('canvas'); c.width = 256; c.height = 256;
+                const cx = c.getContext('2d');
+                cx.fillStyle = type === 'CD2' ? '#0f1830' : '#1a1030';
+                cx.fillRect(0, 0, 256, 256);
+                cx.strokeStyle = 'rgba(255,255,255,0.35)'; cx.lineWidth = 2;
+                for (let r = 30; r < 128; r += 18) { cx.beginPath(); cx.arc(128, 128, r, 0, Math.PI * 2); cx.stroke(); }
+                cx.fillStyle = 'rgba(255,255,255,0.7)';
+                cx.font = '700 20px "JetBrains Mono", monospace';
+                cx.textAlign = 'center';
+                cx.fillText(type, 128, 132);
+                coverTex = new THREE.CanvasTexture(c);
+                coverTex.colorSpace = THREE.SRGBColorSpace;
+            }
             const faceMat = new THREE.MeshStandardMaterial({
-                map: coverTex, emissiveMap: coverTex, color: 0x8aa0ff, emissive: color,
-                emissiveIntensity: 0.9, transparent: true, opacity: 0.85, side: THREE.DoubleSide
+                map: coverTex, emissiveMap: coverTex, color: type === 'CD2' ? 0xffffff : 0x8aa0ff, emissive: color,
+                emissiveIntensity: type === 'CD2' ? 0.4 : 0.9, transparent: true, opacity: type === 'CD2' ? 1 : 0.85, side: THREE.DoubleSide
             });
             mesh = new THREE.Mesh(new THREE.CircleGeometry(0.5, 56), faceMat);
             group.add(mesh);
@@ -1755,13 +2324,24 @@
         holoObjects.push(group);
     };
 
-    // exactly one floating object per category: REAP (IxD/VHS), Labwear (BD/CD), Cocoon (SxD/FILM), Orugaagii Supply (AD/USB)
-    const colors = [0x4682B4, 0x1400FF, 0x6E63E8, 0xffffff];
-    const types = ['VHS', 'CD', 'FILM', 'USB'];
-    const totalProps = 4;
-    for (let i = 0; i < totalProps; i++) {
-        createHoloProp(types[i % types.length], i, totalProps, colors[i % colors.length]);
-    }
+    // one floating object per project: 6 IxD cartridges, Labwear (BD/CD), Cocoon (SxD/FILM), Orugaagii Supply (AD/USB)
+    const props = [
+        { type: 'VHS', color: 0xAAC8B4 },
+        { type: 'VHS2', color: 0x03BFA5 },
+        { type: 'VHS3', color: 0x7C3AED },
+        { type: 'VHS4', color: 0xF08365 },
+        { type: 'VHS5', color: 0x8C5E3D },
+        { type: 'VHS6', color: 0x1547CE },
+        { type: 'CD', color: 0x1400FF },
+        { type: 'CD2', color: 0x516C4A },
+        { type: 'CD3', color: 0x0d2fb0 },
+        { type: 'FILM', color: 0x6E63E8 },
+        { type: 'USB', color: 0xffffff },
+        { type: 'USB2', color: 0xf2c94c },
+        { type: 'USB3', color: 0xe0a83a }
+    ];
+    const totalProps = props.length;
+    props.forEach((p, i) => createHoloProp(p.type, i, totalProps, p.color));
 
     function updateObjectPlacements() {
         const vFOV = camera.fov * Math.PI / 180;
@@ -1793,6 +2373,7 @@
                 obj.userData.targetScale.set(1.3, 1.3, 1.3);
             });
         } else {
+          try {
             // Recede others
             nonFiltered.forEach(obj => {
                 obj.userData.opacityTarget = 0.05;
@@ -1802,7 +2383,8 @@
 
             // Dynamic grid — objects sized to comfortably fill viewport
             const count = filtered.length;
-            const cols = count <= 1 ? 1 : count <= 2 ? 2 : count <= 4 ? 2 : count <= 6 ? 3 : 4;
+            const isIxdGrid = currentCategory === 'INTERACTIVE' || currentCategory === 'BRANDING' || currentCategory === 'ART_DIRECTION';
+            const cols = currentCategory === 'INTERACTIVE' ? 3 : (isIxdGrid ? Math.min(3, count) : (count <= 1 ? 1 : count <= 2 ? 2 : count <= 4 ? 2 : count <= 6 ? 3 : 4));
             const rows = Math.ceil(count / cols);
 
             // World-space safe zone (avoid header + footer)
@@ -1817,28 +2399,32 @@
             const pxW = window.innerWidth;
             const topMargin  = fullH * (headerPx / pxH) + 1.2;
             const botMargin  = fullH * (footerPx  / pxH) + 1.0;
-            const usableH = fullH - topMargin - botMargin;
+            const usableH = (fullH - topMargin - botMargin);
             const usableW = fullW * 0.85;
 
             // Object size: fit to grid cell with padding
             const cellW = cols > 1 ? usableW / cols : usableW * 0.35;
             const cellH = rows > 1 ? usableH / rows : usableH * 0.4;
-            const cellSize = Math.min(cellW, cellH) * 0.72;
+            const cellSize = Math.min(cellW, cellH) * (isIxdGrid ? 0.62 : 0.72);
 
-            const spacingX = usableW / cols;
-            const spacingY = usableH / rows;
+            const centerYOffset = -(topMargin - botMargin) / 2;
+            const tightness = isIxdGrid ? 0.82 : 1;
+            const tightnessY = isIxdGrid ? 1.05 : 1;
+            const spacingX = (usableW / cols) * tightness;
+            const spacingY = (usableH / rows) * tightnessY;
 
             filtered.forEach((obj, i) => {
                 const col = i % cols;
                 const row = Math.floor(i / cols);
                 obj.userData.targetPos.set(
                     (col - (cols - 1) / 2) * spacingX,
-                    ((rows - 1) / 2 - row) * spacingY,
+                    ((rows - 1) / 2 - row) * spacingY + centerYOffset,
                     zPos
                 );
                 obj.userData.opacityTarget = 0.9;
                 obj.userData.targetScale.set(cellSize, cellSize, cellSize);
             });
+          } catch (err) { console.error('updateObjectPlacements grid error:', err); }
         }
     }
 

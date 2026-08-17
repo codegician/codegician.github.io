@@ -483,7 +483,7 @@
 <header class="fixed top-0 left-0 w-full z-50 flex flex-col pointer-events-auto">
 <div class="flex justify-between items-center px-gutter py-4 bg-surface/40 backdrop-blur-md border-b border-white/5">
 <div class="font-display-lg text-2xl text-primary drop-shadow-[0_0_12px_rgba(255,127,80,0.6)] cursor-pointer" onclick="resetToArtDirection()">
-            MOORS_HOUSE_v1.2
+            DREAM_HOUSE_v1.3
         </div>
 <div class="flex gap-4 items-center">
 <button id="ambient-toggle" class="transition-all duration-300 active:scale-95 text-on-surface-variant hover:text-primary bg-surface-container/30 w-9 h-9 rounded-full backdrop-blur-md border border-white/10 flex items-center justify-center" type="button" aria-label="Toggle sound"><span class="material-symbols-outlined text-lg" id="ambient-icon">volume_up</span></button>
@@ -605,7 +605,7 @@
 <div class="dream-blur p-7 rounded-2xl gold-glow-ui text-left" id="about-card">
 <div class="font-code-sm text-[10px] text-tertiary tracking-[0.25em] mb-3">ABOUT_THE_RESIDENT</div>
 <div class="font-display-lg text-2xl text-primary uppercase tracking-tight mb-3">@ORUGAAGII</div>
-<p class="font-body-md text-on-surface-variant leading-relaxed text-sm mb-5">Hey, I'm a futurist building ideas to disrupt “how it is” and foster an equitable future. I'm a BSUXD grad pursuing a Master's in Design for Emergent Futures, and intend to pick up a Master's in Software Engineering along the way. My ideas complement each other, each serving as a cog in a system that spans disciplines like Architecture, Synthetic Biology, Blockchain, and of course AI Engineering.</p>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-sm mb-5" style="text-wrap:pretty">Hey, I'm a futurist building ideas to disrupt “how it is” and foster an equitable future. I'm&nbsp;a&nbsp;BSUXD grad pursuing a SACRe PhD after securing my Master's. My ideas complement each other, each serving as a cog in a system spanning disciplines such as Wellness, Architecture, Synthetic Biology, Blockchain, and, of course, AI Engineering.</p>
 <a class="font-code-sm text-xs text-secondary-fixed-dim hover:text-primary transition-colors tracking-widest" href="mailto:mind@surreal.io">→ SEND_THOUGHT</a>
 </div>
 <main id="ui-layer">
@@ -656,16 +656,16 @@
 <p class="text-[10px] opacity-40 uppercase tracking-[0.2em] mt-4">Broadcast authorized via Moors_Net 4.2</p>
 </div>
 </div>
-<div class="dream-blur p-7 rounded-2xl gold-glow-ui text-left flex flex-col justify-between" style="height:100%">
-<div class="font-code-sm text-[10px] text-tertiary tracking-[0.25em] mb-3">ABOUT_THE_RESIDENT</div>
-<div class="font-display-lg text-2xl text-primary uppercase tracking-tight mb-3">@ORUGAAGII</div>
-<p class="font-body-md text-on-surface-variant leading-relaxed text-sm mb-5">Hey, I'm a futurist building ideas to disrupt “how it is” and foster an equitable future. I'm a BSUXD grad pursuing a Master's in Design for Emergent Futures, and intend to pick up a Master's in Software Engineering along the way. My ideas complement each other, each serving as a cog in a system that spans disciplines like Architecture, Synthetic Biology, Blockchain, and of course AI Engineering.</p>
+<div class="dream-blur p-7 rounded-2xl gold-glow-ui text-left flex flex-col justify-between" style="width:calc(100% + 90px);min-width:0">
+<div class="font-code-sm text-[10px] text-tertiary tracking-[0.25em] mb-3">ABOUT_MOORS</div>
+<div class="font-display-lg text-2xl text-primary uppercase tracking-tight mb-3" style="display:none">@ORUGAAGII</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-sm mb-5" style="text-wrap:pretty">Hey, I'm a futurist building ideas to disrupt “how it is” and foster an equitable future. I'm&nbsp;a&nbsp;BSUXD grad pursuing a SACRe PhD after securing my Master's. My ideas complement each other, each serving as a cog in a system spanning disciplines such as Wellness, Architecture, Synthetic Biology, Blockchain, and, of course, AI Engineering.</p>
 <a class="font-code-sm text-xs text-secondary-fixed-dim hover:text-primary transition-colors tracking-widest" href="mailto:mind@surreal.io">→ SEND_THOUGHT</a>
 </div>
 <div class="text-right">
 <div class="inline-block p-8 dream-blur rounded-2xl border-t-8 border-primary shadow-2xl relative overflow-hidden group gold-glow-ui">
 <div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
-<div class="font-display-lg text-headline-lg text-tertiary mb-2 tracking-tighter uppercase">Archived_v1</div>
+<div class="font-display-lg text-headline-lg text-tertiary mb-2 tracking-tighter uppercase">DREAM_HOUSE_v1.3</div>
 <p class="font-label-sm text-on-surface-variant opacity-70">©1492 SURREAL_SYSTEMS</p>
 </div>
 </div>
@@ -887,10 +887,10 @@
                 x === 0 ? tvCtx.moveTo(x, y) : tvCtx.lineTo(x, y);
             }
             tvCtx.stroke();
-            tvCtx.fillStyle = '#ff7f50';
+            tvCtx.fillStyle = '#4682b4';
             tvCtx.font = '700 44px Syne, sans-serif'; tvCtx.textAlign = 'center';
-            tvCtx.shadowColor = '#ff7f50'; tvCtx.shadowBlur = 24;
-            tvCtx.fillText('MOORS_HOUSE', W/2, H/2 - 20);
+            tvCtx.shadowColor = '#4682b4'; tvCtx.shadowBlur = 24;
+            tvCtx.fillText('GET_STARTED', W/2, H/2 - 20);
             tvCtx.shadowBlur = 0;
             if (Math.sin(time * 3) > 0) {
                 tvCtx.fillStyle = '#e9c349';
@@ -1324,22 +1324,25 @@
         if (!ch || !ch.type) return;
         const p = projectData[ch.type];
         const accent = ch.accent || '#ff7f50';
+        const isIxd = categoriesMap[ch.type] === 'INTERACTIVE';
         document.getElementById('case-cat').innerText = `FILE // ${categoriesMap[ch.type]}`;
         document.getElementById('case-title').innerText = p.title;
         document.getElementById('case-meta').innerText = p.meta;
         // Inline CTA (View Prototype / Live Site) next to meta row
         const metaCta = document.getElementById('case-meta-cta');
-        if (metaCta && p.link) {
+        if (metaCta && isIxd) {
+            metaCta.innerHTML = `<div class="relative inline-flex group"><button disabled class="inline-flex items-center justify-center gap-2 w-[210px] py-2 bg-primary/30 text-on-primary/50 font-label-sm rounded-full uppercase tracking-widest text-xs cursor-not-allowed whitespace-nowrap">View Prototype ↗</button><span class="absolute left-1/2 -translate-x-1/2 -top-9 px-3 py-1.5 rounded-md bg-surface-container-high text-on-surface text-[10px] font-code-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Coming Soon</span></div>`;
+        } else if (metaCta && p.link) {
             const lbl = p.link.kind === 'site' ? 'Visit Live Site ↗' : 'View Prototype ↗';
             const href = p.link.url && p.link.url !== '#' ? `href="${p.link.url}" target="_blank" rel="noopener"` : `href="#" onclick="return false"`;
-            metaCta.innerHTML = `<a ${href} class="inline-flex items-center gap-2 px-6 py-2 bg-primary text-on-primary font-label-sm rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_16px_rgba(255,127,80,0.4)] uppercase tracking-widest text-xs">${lbl}</a>`;
+            metaCta.innerHTML = `<a ${href} class="inline-flex items-center justify-center gap-2 w-[210px] py-2 bg-primary text-on-primary font-label-sm rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_16px_rgba(255,127,80,0.4)] uppercase tracking-widest text-xs whitespace-nowrap">${lbl}</a>`;
         } else if (metaCta) {
             metaCta.innerHTML = '';
         }
 
         // 2. optional hero
         const heroWrap = document.getElementById('case-hero-wrap');
-        if (!p.hero) {
+        if (!p.hero || isIxd) {
             heroWrap.innerHTML = '';
         } else if (p.hero.kind === 'logo') {
             heroWrap.innerHTML = `<div class="case-hero" style="--accent:${accent}"><div class="hero-logo"><div class="logo-word">${p.hero.word}</div></div></div>`;
@@ -1434,7 +1437,7 @@
                     const imgCols = s.imgs ? (s.imgsCols || Math.min(s.imgs.length,2)) : 0;
                     const imgMaxH = s.imgMaxH || '260px';
                     const imgHtml = s.imgs ? '<div class="grid grid-cols-' + imgCols + ' gap-3 mt-3">' + s.imgs.map(function(im){ return '<img src="' + im + '" class="w-full rounded-lg border border-white/8" style="object-fit:contain;max-height:' + imgMaxH + '">'; }).join('') + '</div>' : (s.img ? '<img src="' + s.img + '" class="w-full rounded-lg border border-white/8 mt-3" style="object-fit:contain;max-height:300px">' : '');
-                    const linkBtnHtml = s.showLink && p.link ? '<a ' + (p.link.url && p.link.url !== '#' ? 'href="' + p.link.url + '" target="_blank" rel="noopener"' : 'href="#" onclick="return false"') + ' class="inline-flex items-center gap-2 px-6 py-2 bg-primary text-on-primary font-label-sm rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_16px_rgba(255,127,80,0.4)] uppercase tracking-widest text-xs mt-4">' + (p.link.kind === 'site' ? 'Visit Live Site ↗' : 'View Prototype ↗') + '</a>' : '';
+                    const linkBtnHtml = !s.showLink ? '' : (isIxd ? '<div class="relative inline-flex group mt-4"><button disabled class="inline-flex items-center justify-center gap-2 w-[210px] py-2 bg-primary/30 text-on-primary/50 font-label-sm rounded-full uppercase tracking-widest text-xs cursor-not-allowed whitespace-nowrap">View Prototype ↗</button><span class="absolute left-1/2 -translate-x-1/2 -top-9 px-3 py-1.5 rounded-md bg-surface-container-high text-on-surface text-[10px] font-code-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Coming Soon</span></div>' : (p.link ? '<a ' + (p.link.url && p.link.url !== '#' ? 'href="' + p.link.url + '" target="_blank" rel="noopener"' : 'href="#" onclick="return false"') + ' class="inline-flex items-center justify-center gap-2 w-[210px] py-2 bg-primary text-on-primary font-label-sm rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_16px_rgba(255,127,80,0.4)] uppercase tracking-widest text-xs mt-4 whitespace-nowrap">' + (p.link.kind === 'site' ? 'Visit Live Site ↗' : 'View Prototype ↗') + '</a>' : ''));
                     if (s.layout === 'row') {
                         var rowImg = s.img ? '<div class="flex-1"><img src="' + s.img + '" class="w-full rounded-lg border border-white/8" style="object-fit:contain;max-height:320px"></div>' : (s.imgs ? '<div class="flex-1 flex flex-col gap-3">' + s.imgs.map(function(im){ return '<img src="' + im + '" class="w-full rounded-lg border border-white/8" style="object-fit:contain;max-height:200px">'; }).join('') + '</div>' : '');
                         var rowText = '<div class="flex-1 flex flex-col justify-center">' + bodyHtml + statsHtml + linkBtnHtml + '</div>';
@@ -1594,12 +1597,12 @@
     // screens: array of mosaic tiles (4–6); each { label, span?, img? }
     const projectData = {
         'VHS': {
-            title: 'REAP_EXCHANGE', meta: 'ROLE: MARKET RESEARCH, COMPETITIVE ANALYSIS, UX, UI DESIGN, PROTOTYPING  //  TYPE: SELF-INITIATED  //  YEAR: 2025', hint: 'Web3 charge card: onchain credit that feels off-chain.', hero: { kind: 'logo', word: 'REAP' },
+            title: 'REAP_EXCHANGE', meta: 'ROLE: MARKET RESEARCH, COMPETITIVE ANALYSIS, PERSONAS, USER FLOWS, WIREFRAMING, UI DESIGN, PROTOTYPING  //  TIMEFRAME: ~3 WEEKS  //  TOOLS: FIGMA, CLAUDE, CLAUDE CODE, CLAUDE DESIGN, FIGMA MCP  //  TYPE: SELF-INITIATED  //  YEAR: 2025', hint: 'Web3 charge card: onchain credit that feels off-chain.', hero: { kind: 'logo', word: 'REAP' },
             screens: [
                 { label: 'HI_FI_SCREENS', span: 'col-span-3 row-span-2', img: 'assets/n7hElix49d4o62a8yHGoc3OIocs.avif' },
                 { label: 'SETTINGS_BUYBACK_TREASURY', span: 'col-span-3 row-span-2', img: 'assets/summary.webp' }
             ],
-            problem: 'Web3 professionals paid in cryptocurrency need an efficient way to turn that income into everyday spending power. Existing off-ramps are slow and expensive, surveys across active DAOs show contributors reporting $100 or more in gas fees per paycheck, 3 to 6 transactions to complete a single off-ramp, and 5 to 7 days for funds to land. The audience is large and growing: DAO participants went from 13,000 in 2021 to 1.6 million in 2023, and DAO treasuries passed $25 billion by March 2023.', approach: 'Researching Coinbase and Crypto.com showed both offer prepaid Visa cards with strong cashback, up to 5% and 4% respectively, that work anywhere Visa is accepted. But published user complaints centered on declined cards, confusing activation flows, and fees that accumulate faster than rewards offset them. The deeper flaw: the prepaid model requires converting crypto to fiat before spending. Every conversion is a potential taxable event, spending limits apply, and rewards depend on staking specific tokens. That ruled out designing a better prepaid card. The Reap solution extends a credit line against crypto and precious metal collateral instead, the user keeps ownership of the asset, avoids the conversion, and skips the taxable event.', outcome: 'A functional prototype covering deposits, buybacks, and rewards. The credit line model removes the conversion step that made every competitor flow slow and taxable, cutting the path between holding crypto and spending it. The prototype moved Reap Exchange from concept to pitchable, demonstrated live rather than described on slides. Pitched twice and submitted to a16z Speedrun.', extended: [
+            problem: 'Web3 professionals paid in cryptocurrency need an efficient way to turn that income into everyday spending power. Existing off-ramps are slow and expensive, surveys across active DAOs show contributors reporting $100 or more in gas fees per paycheck, 3 to 6 transactions to complete a single off-ramp, and 5 to 7 days for funds to land. The audience is large and growing: DAO participants went from 13,000 in 2021 to 1.6 million in 2023, and DAO treasuries passed $25 billion by March 2023.', approach: 'Researching Coinbase and Crypto.com showed both offer prepaid Visa cards with strong cashback, up to 5% and 4% respectively, that work anywhere Visa is accepted. But published user complaints centered on declined cards, confusing activation flows, and fees that accumulate faster than rewards offset them. The deeper flaw: the prepaid model requires converting crypto to fiat before spending. Every conversion is a potential taxable event, spending limits apply, and rewards depend on staking specific tokens. That ruled out designing a better prepaid card. The Reap solution extends a credit line against crypto and precious metal collateral instead, the user keeps ownership of the asset, avoids the conversion, and skips the taxable event.', outcome: 'A functional prototype covering deposits, buybacks, and rewards. The credit line model removes the conversion step that made every competitor flow slow and taxable, cutting the path between holding crypto and spending it. The prototype moved Reap Exchange from concept to pitchable, demonstrated live rather than described on slides. Pitched twice and submitted to a16z Speedrun. Without an existing user base it is challenging to gain traction, but the market position is clear, along with the gap the product can fill to capture market share and even disrupt the financial space.', extended: [
                 {
                     groupTitle: 'UX_RESEARCH', sections: [
                         {
@@ -1643,7 +1646,7 @@
             ],
             link: { kind: 'prototype', url: 'https://reap.figma.site/' }
         }, 'FILM': {
-            title: 'COCOON', meta: 'ROLE: CONCEPT, ART DIRECTION, DESIGN SYSTEM, INTERACTIVE PROTOTYPE, TECHNICAL BUILD  //  TYPE: MAKEATHON  //  YEAR: 2026', hint: 'AR sensory filter: soften reality, don\'t escape it.', hero: { kind: 'video', src: 'https://github.com/codegician/codegician.github.io/releases/download/v1.0/cocoon-walkthrough.mp4' },
+            title: 'COCOON', meta: 'ROLE: CONCEPT, ART DIRECTION, DESIGN SYSTEM, INTERACTIVE PROTOTYPE, TECHNICAL BUILD (MASKING, AUDIO, VIDEO COMPOSITING)  //  TIMEFRAME: 12 DAYS, FIGMA CONFIG MAKEATHON 2026  //  TOOLS: FIGMA, FIGMA MAKE (REACT/TYPESCRIPT), CLAUDE VIA FIGMA MCP, FLORA, WEAVE, HIGGSFIELD, DREAMINA/SEEDANCE  //  TYPE: MAKEATHON BUILD, SELF-DIRECTED CONCEPT  //  YEAR: 2026', hint: 'AR sensory filter: soften reality, don\'t escape it.', hero: { kind: 'video', src: 'https://github.com/codegician/codegician.github.io/releases/download/v1.0/cocoon-walkthrough.mp4' },
             roleReveal: {
                 title: 'VIS_EVOLUTION', beforeLabel: 'RAW STATE', afterLabel: 'COCOON STATE', before: 'https://github.com/codegician/codegician.github.io/releases/download/v1.0/cocoon-before-ts.png', after: 'https://github.com/codegician/codegician.github.io/releases/download/v1.0/cocoon-after-ts-overgrowth.png'
             },
@@ -1725,7 +1728,7 @@
             ],
             problem: 'The studio\u2019s physical goods had no consistent packaging language as the line grew.', approach: 'Built a modular dieline and label system that stays recognizable across sizes while leaving room for hand-crafted, one-off detailing.', outcome: 'Packaging that feels made-by-hand but ships at scale, a coherent imprint across every product in the line.', link: null
         }, 'LABWEAR': {
-            title: 'LABWEAR_STUDIOS', meta: 'ROLE: BRAND DESIGNER (FREELANCE SUBMISSION / OPEN CALL)  //  YEAR: 2024', hint: 'Swiss MaaS icon / modular nodes that literalize the network.', hero: { kind: 'video', src: 'https://github.com/codegician/codegician.github.io/releases/download/v1.3/Time-Lapse.Video.mp4', speed: 6 },
+            title: 'LABWEAR_STUDIOS', meta: 'ROLE: ICON DESIGN, IDENTITY SYSTEM, LOCKUPS, COLORWAYS  //  CLIENT: LABWEAR STUDIOS (OPEN CALL SUBMISSION)  //  TOOLS: AFFINITY/ILLUSTRATOR, FLORA AI  //  YEAR: 2024', hint: 'Swiss MaaS icon / modular nodes that literalize the network.', hero: { kind: 'video', src: 'https://github.com/codegician/codegician.github.io/releases/download/v1.3/Time-Lapse.Video.mp4', speed: 6 },
             screens: [
                 { label: 'VARIANTS', span: 'col-span-4 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.3/Variants.png' },
                 { label: 'HANG_TAG', span: 'col-span-2 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.3/Hang.Tag.png' },
@@ -1835,7 +1838,7 @@
     }
     Object.assign(projectData, {
         'CD2': {
-            title: 'AEI_ARQUITECTURA', meta: 'ROLE: NAMING, IDENTITY DESIGN, COLOR SYSTEM, TYPOGRAPHY, DESIGN LANGUAGE, APPLICATION DESIGN  //  CLIENT: AEI ARQUITECTURA (SPEC RESPONSE)  //  TOOLS: FIGMA, AFFINITY, FLORA AI  //  YEAR: 2024', hint: 'An identity for a two-person eco-architecture practice, built so the mark itself becomes the design system.', hero: { kind: 'logo', word: 'AEI' },
+            title: 'AEI_ARQUITECTURA', meta: 'ROLE: NAMING, IDENTITY DESIGN, COLOR SYSTEM, TYPOGRAPHY, DESIGN LANGUAGE, APPLICATION DESIGN  //  CLIENT: AEI ARQUITECTURA (SPEC RESPONSE)  //  TOOLS: FIGMA, AFFINITY, FLORA AI (NANO BANANA 2 LITE)  //  YEAR: 2024', hint: 'An identity for a two-person eco-architecture practice, built so the mark itself becomes the design system.', hero: { kind: 'logo', word: 'AEI' },
             screens: [
                 { label: 'MARK_SYSTEM', span: 'col-span-4 row-span-2' },
                 { label: 'COLORWAYS', span: 'col-span-2 row-span-2' },
@@ -1968,15 +1971,14 @@
                     ]
                 },
                 {
-                    groupTitle: 'RESULT_&_IMPACT', sections: [
-                        { title: 'THE_RESULT', span: 'full', layout: 'row', showLink: true, body: 'A complete participation loop: 8 designed frames from onboarding through idea submission, a live Bubble build in progress, and a documented agentic architecture covering reputation scoring, role assignment, and platform-scale unlocks. The Movement Graph is the macro counterpart to the personal unlock moment, making the full scale of a movement visible to every member.<br><br>The systems layer is designed past what\'s built, with implementation deferred: a translation model where machine translation stays free for everyone and human-verified translation is the rep-gated reward, a pseudonymous-to-full-identity progression where the agent is the one fully-sighted party, a ZK-proof and KYC split that keeps formal identity checks only at the funding boundary, and reputation staking that keeps entry free of any money barrier.' },
-                        { title: 'IMPACT', span: 'full', layout: 'row', body: 'Momentum is at live-build stage, ahead of launch, so the honest measure is architectural: a complete participation loop, an agentic system documented from scoring through role assignment to scale unlocks, and a schema audited against a real Bubble branch. Next milestone: per-cause reputation in the schema, Claude Haiku API integration for live scoring, and usability testing on the onboarding-to-first-contribution flow.' }
+                    groupTitle: 'THE_RESULT', sections: [
+                        { title: 'THE_RESULT', span: 'full', layout: 'row', showLink: true, body: 'A complete participation loop: 8 designed frames from onboarding through idea submission, a live Bubble build in progress, and a documented agentic architecture covering reputation scoring, role assignment, and platform-scale unlocks. The Movement Graph is the macro counterpart to the personal unlock moment, making the full scale of a movement visible to every member.<br><br>The systems layer is designed past what\'s built, with implementation deferred: a translation model where machine translation stays free for everyone and human-verified translation is the rep-gated reward, a pseudonymous-to-full-identity progression where the agent is the one fully-sighted party, a ZK-proof and KYC split that keeps formal identity checks only at the funding boundary, and reputation staking that keeps entry free of any money barrier.' }
                     ]
                 }
             ],
             link: null
         }, 'VHS3': {
-            title: 'REAP_MARKETS', meta: 'ROLE: PRODUCT STRATEGY, UX ARCHITECTURE, DESIGN SYSTEM, FIGMA EXECUTION  //  TYPE: SELF-INITIATED  //  YEAR: 2025', hint: 'Forecasting exchange: discipline over noise.', hero: { kind: 'logo', word: 'REAP' },
+            title: 'REAP_MARKETS', meta: 'ROLE: PRODUCT STRATEGY, UX ARCHITECTURE, DESIGN SYSTEM, FIGMA EXECUTION  //  TIMEFRAME: 2 WEEKS  //  TOOLS: FIGMA, CLAUDE, CLAUDE CODE, CLAUDE DESIGN  //  TYPE: SELF-INITIATED FEATURE RELEASE UNDER REAP EXCHANGE  //  YEAR: 2025', hint: 'Forecasting exchange: discipline over noise.', hero: { kind: 'logo', word: 'REAP' },
             screens: [
                 { label: 'MARKET_FEED', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Markets.-.Desktop.-.Hi-Fi.Light.png' },
                 { label: 'TRADE_DETAIL', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.4/Market.Detail.-.Desktop.-.Hi-Fi.Light.png' },
@@ -2081,7 +2083,7 @@
             ],
             link: null
         }, 'VHS5': {
-            title: 'PUERTO_MOROS_LEDGER', meta: 'ROLE: CONCEPT, SYSTEMS & DATA MODELING, INTERACTION DESIGN, USABILITY RESEARCH, TECHNICAL BUILD DIRECTION  //  TYPE: ORUGAAGII ENTERPRISE  //  YEAR: 2025', hint: 'Steward dashboard: turning a property list into a visible economy.', hero: { kind: 'logo', word: 'PML' },
+            title: 'PUERTO_MOROS_LEDGER', meta: 'ROLE: CONCEPT, SYSTEMS & DATA MODELING, INTERACTION DESIGN, USABILITY RESEARCH & SYNTHESIS, TECHNICAL BUILD DIRECTION  //  TIMEFRAME: 3 WEEKS  //  TOOLS: REACT, CLAUDE CODE/DESIGN  //  TYPE: STEWARD-FACING DASHBOARD, ORUGAAGII ENTERPRISE  //  YEAR: 2025', hint: 'Steward dashboard: turning a property list into a visible economy.', hero: { kind: 'logo', word: 'PML' },
             screens: [
                 { label: 'FULL_DASHBOARD', span: 'col-span-4 row-span-2' },
                 { label: 'NODE_DETAIL_PANEL', span: 'col-span-2 row-span-2' },
@@ -2102,6 +2104,9 @@
                             title: 'DEPENDENCY_MODELING', body: 'Nodes connect by what they supply each other, a hydroponics tower feeding several cafés and a residence, a farm feeding the tower. This is what turns the dashboard from a property list into a visible economy: it shows who a failure would drag down with it.'
                         },
                         {
+                            title: 'HEALTH_&_NEEDS_HANDS', body: 'Every node carries a health reading tied to contribution level. Below a threshold it\'s flagged as needing contributors, with an estimate of how many. This is the seam back to the member-facing app: the dashboard names the fix, and the fix is something a member can act on.'
+                        },
+                        {
                             title: 'ROLE_GATING', body: 'Puerto Moros already has a council structure (Land & Yield, Hospitality, Infrastructure, plus a small inner circle), so financial and yield data is gated by role. A member sees the map and node health; a steward also sees GDP, per-node revenue, and yield. The gating is the governance structure itself expressed as an interface rule, not a privacy feature, but a reflection of how the organization actually works.'
                         }
                     ]
@@ -2112,7 +2117,7 @@
                             title: 'WHAT_THE_SESSION_FOUND', body: 'The usability session surfaced one distinction that shaped everything after: the underlying systems model tested as sound while the interface failed to explain itself.<br><br>The model held up. The tester correctly read the density encoding and inferred the role-gating without being told. The interface didn\'t hold up. Five minutes in, without having clicked the map, the tester asked "I\'m looking for what?" When asked to check a specific location, they reached for the list rather than the map. Terms like "steward" "node revenue" and "needs hands" had to be guessed at. The dark theme read as "a battleship." One finding reframed a decision rather than flagging a bug: the "needs hands" flag was read as "a job post"a usable mental model the interface hadn\'t yet leaned into.'
                         },
                         {
-                            title: 'V2_EVIDENCE_TRACE', body: '"I\'m looking for what?" → a persistent strapline under the masthead stating what the dashboard is for.<br><br>Map not recognized as interactive → kept it primary, fixed discoverability: larger click targets, stronger hover response, a one-time fading tap hint on load.<br><br>Terminology had no support → plain-English captions in view at all times; the role toggle reads its own logic directly beneath it rather than relying on tooltips.<br><br>"Battleship" read → dependency edges at low opacity by default, reaching full intensity only on hover or selection.<br><br>Four equal stat tiles blurred together → one hero metric (Population) and three secondary tiles each paired with a gauge, number, and caption.<br><br>The "job post" model → kept and the needs-hands copy rewritten to lean into it.<br><br>Added a year-by-year growth timeline, since the census concept this extends is explicitly about growth as legitimacy.'
+                            title: 'V2_EVIDENCE_TRACE', body: '"I\'m looking for what?" → a persistent strapline under the masthead stating what the dashboard is for.<br><br>Map not recognized as interactive → implemented a map style more recognizable to users of GPS interfaces, kept it primary, fixed discoverability: larger click targets, stronger hover response, a one-time fading tap hint on load.<br><br>Terminology had no support → plain-English captions in view at all times; the role toggle reads its own logic directly beneath it rather than relying on tooltips.<br><br>"Battleship" read → dependency edges at low opacity by default, reaching full intensity only on hover or selection.<br><br>Four equal stat tiles blurred together → one hero metric (Population) and three secondary tiles each paired with a gauge, number, and caption.<br><br>The "job post" model → kept and the needs-hands copy rewritten to lean into it.<br><br>Added a year-by-year growth timeline, since the census concept this extends is explicitly about growth as legitimacy.'
                         }
                     ]
                 },
@@ -2129,7 +2134,7 @@
             ],
             link: null
         }, 'VHS6': {
-            title: 'FASTIN', meta: 'ROLE: RESEARCH, USABILITY TESTING, UX/UI DESIGN, PROTOTYPING, MD3 COMPONENT LIBRARY  //  TYPE: SELF-INITIATED  //  YEAR: 2025', hint: 'Delivery app for people who think about food, not just order it.', hero: { kind: 'logo', word: 'FASTIN' },
+            title: 'FASTIN', meta: 'ROLE: RESEARCH, USABILITY TESTING, UX/UI DESIGN, PROTOTYPING, MD3 COMPONENT LIBRARY  //  TIMEFRAME: 1 WEEK  //  TOOLS: FIGMA, FLORA  //  TYPE: SELF-INITIATED  //  YEAR: 2025', hint: 'Delivery app for people who think about food, not just order it.', hero: { kind: 'logo', word: 'FASTIN' },
             screens: [
                 { label: 'HOME_FASTING_STATE', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.4.Home-2.png' },
                 { label: 'MEAL_DETAIL', span: 'col-span-3 row-span-2', img: 'https://github.com/codegician/codegician.github.io/releases/download/v1.5/Screen.5.Meal.Detail.png' },
